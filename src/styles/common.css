@@ -1,0 +1,63 @@
+.movie-wrap{
+  width: 650px;
+  margin:40px auto;
+}
+.player{
+  margin-bottom: 40px;
+}
+.control{
+  margin:20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section-info{
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  .next-btn{
+    margin-top: 10px;
+  }
+}
+.loop-btn.active{
+  color: red;
+}
+.next-btn{
+  border:1px solid #ccc;
+  color: #000;
+  &.disabled{
+    opacity: 0.4;
+  }
+}
+.quiz-block{
+  margin:20px 0;
+}
+.quiz-block .splice-cover{
+   border-bottom:1px solid #ccc;
+  &+span{
+    margin-left: 10px;
+  }
+}
+.quiz-block .splice.blank {
+  color: transparent;   /*텍스트만 안 보이게 */
+}
+.radom-word{
+  margin:40px 0;
+}
+.radom-word .wrong{
+  text-decoration: line-through;
+}
+.radom-word button{
+  border:1px solid #ccc; 
+  border-radius: 8px;
+  padding:5px 10px;
+  margin:4px 0;
+  margin-right: 10px;
+}
+.translation{
+  margin-top: 20px;
+}
+.movie-wrap .btn{
+    border:1px solid #ccc; 
+    margin-right: 10px;
+}
