@@ -3,14 +3,16 @@ name: Deploy Vite app to GitHub Pages
 on:
   push:
     branches:
-      - main   # main 브랜치에 push될 때 실행
+      - main
+
 permissions:
-  contents: write   # ✅ gh-pages 브랜치로 푸시할 권한
+  contents: write
+  pages: write      # ✅ Pages 권한 필요
+  id-token: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -20,25 +22,20 @@ jobs:
         with:
           node-version: 20
 
-      # --- 핵심: npm cache clean + lock 제거 후 fresh install ---
-      - name: Clean npm cache
-        run: npm cache clean --force
-
       - name: Install dependencies
-        run: |
-          rm -f package-lock.json
-          rm -rf node_modules
-          npm install
+        run: npm ci
 
       - name: Build project
         run: npm run build
 
-      # GitHub Pages로 배포
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload production artifacts
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages        # ✅ 결과물을 이 브랜치로 푸시
-          user_name: github-actions[bot]  # (선택) 커밋 사용자
-          user_email: github-actions[bot]@users.noreply.github.com
+          path: ./dist   # 배포할 디렉토리
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
