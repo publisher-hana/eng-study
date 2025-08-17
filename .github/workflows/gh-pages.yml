@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main   # main 브랜치에 push될 때 실행
+permissions:
+  contents: write   # ✅ gh-pages 브랜치로 푸시할 권한
 
 jobs:
   build-and-deploy:
@@ -37,3 +39,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages        # ✅ 결과물을 이 브랜치로 푸시
+          user_name: github-actions[bot]  # (선택) 커밋 사용자
+          user_email: github-actions[bot]@users.noreply.github.com
