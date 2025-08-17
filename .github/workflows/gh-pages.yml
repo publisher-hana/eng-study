@@ -2,19 +2,19 @@ name: Deploy Vite app to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
+# GitHub Pages 액션이 필요로 하는 권한
 permissions:
   contents: write
-  pages: write      # ✅ Pages 권한 필요
+  pages: write
   id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -22,16 +22,24 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm ci
+      # ⚠️ 핵심: npm lock/node_modules 제거 후 fresh install
+      - name: Clean npm cache
+        run: npm cache clean --force
 
-      - name: Build project
+      - name: Fresh install (no lock)
+        run: |
+          rm -f package-lock.json
+          rm -rf node_modules
+          npm install
+
+      - name: Build
         run: npm run build
 
-      - name: Upload production artifacts
+      # dist 를 Pages artifact로 업로드
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist   # 배포할 디렉토리
+          path: ./dist
 
   deploy:
     runs-on: ubuntu-latest
