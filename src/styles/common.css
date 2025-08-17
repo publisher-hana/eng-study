@@ -1,12 +1,32 @@
-.movie-wrap{
+.lesson-wrap{
+  width: 1200px;
+  margin:2.5rem auto;
+  box-sizing: border-box;
+}
+.lesson-list{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:20px;
+  li a{
+    font-size: 18px;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+/*Deatil page*/
+.movie{
   width: 650px;
-  margin:40px auto;
+}
+.link-back{
+  text-align: right;
+  margin-bottom: .625rem;
 }
 .player{
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 .control{
-  margin:20px 0;
+  margin:1.5rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,7 +62,7 @@
   color: transparent;   /*텍스트만 안 보이게 */
 }
 .radom-word{
-  margin:40px 0;
+  margin:2.5rem 0;
 }
 .radom-word .wrong{
   text-decoration: line-through;
@@ -60,4 +80,13 @@
 .movie-wrap .btn{
     border:1px solid #ccc; 
     margin-right: 10px;
+}
+.lesson-title{
+  font-size: 1.875rem;
+  color: #000;
+}
+.lesson-artist{
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 2.5rem;
 }
