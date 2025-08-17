@@ -36,7 +36,7 @@ const DetailPage = () => {
   const [showKo, setShowKo] = useState(false);
   const [answer, setAnswer] = useState(false);
 
-  const { en, ko } = segments[currentIndex];
+  const { en, ko, showEn } = segments[currentIndex];
 
   const originalWords = useMemo(() => en.replace(/[,]/g, '').split(' '), [en]);
   const parts = useMemo(() => en.split(',').map(s => s.trim()), [en]);
@@ -123,7 +123,7 @@ const DetailPage = () => {
         <div className='section-info'>
           <span>구간 {currentIndex + 1} / {segments.length}</span>
           <div className="controls">
-            <button type="button" onClick={replayCurrent} disabled={!ytReady}><IoReload /></button>
+            <button type="button" onClick={replayCurrent} disabled={!ytReady}><IoReload size={20}/></button>
             <button
               onClick={handleNext}
               disabled={!isComplete}
@@ -140,20 +140,27 @@ const DetailPage = () => {
       </div>
 
       <div className='quiz-block'>
-        {originalWords.map((word, i) => (
-          <React.Fragment key={i}>
-            <span className='splice-cover'>
-              <span className={filled[i] ? 'splice' : 'splice blank'}>
-                {filled[i] || word}
+        {showEn ? (
+          <div className="show-en">
+            {showEn}
+          </div>
+        ) : (
+          // 기존 퍼즐 방식
+          originalWords.map((word, i) => (
+            <React.Fragment key={i}>
+              <span className="splice-cover">
+                <span className={filled[i] ? 'splice' : 'splice blank'}>
+                  {filled[i] || word}
+                </span>
               </span>
-            </span>
-            {breakAfter.has(i) && <br className="comma-break" />}
-          </React.Fragment>
-        ))}
+              {breakAfter.has(i) && <br className="comma-break" />}
+            </React.Fragment>
+          ))
+        )}
       </div>
 
       <div className='radom-word'>
-        {tokens.map((word, i) => (
+        {!showEn && tokens.map((word, i) => (
           <button
             key={i}
             onClick={() => handleWordClick(word, i)}

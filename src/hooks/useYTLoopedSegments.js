@@ -46,6 +46,7 @@ export function useYTLoopedSegments({ videoId, segments, playerElementId = "play
           modestbranding: 1,
           playsinline: 1,
           autoplay: 0,
+          //controls: 0 
         },
         events: {
           onReady: () => {
