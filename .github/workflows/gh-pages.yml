@@ -1,44 +1,39 @@
-name: Deploy to GitHub Pages (Vite)
+name: Deploy Vite app to GitHub Pages
 
 on:
   push:
-    branches: [ main ]   # main에 push될 때 배포
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+    branches:
+      - main   # main 브랜치에 push될 때 실행
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
-      - run: npm install
-      - run: npm run build
-      # SPA 새로고침 404 방지
-      - run: cp dist/index.html dist/404.html
+      # --- 핵심: npm cache clean + lock 제거 후 fresh install ---
+      - name: Clean npm cache
+        run: npm cache clean --force
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Install dependencies
+        run: |
+          rm -f package-lock.json
+          rm -rf node_modules
+          npm install
+
+      - name: Build project
+        run: npm run build
+
+      # GitHub Pages로 배포
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: ./dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
