@@ -72,5 +72,117 @@ export const lessons = [
       { start: 59, end: "1:02", en: "Don't you know I'm here to save you", ko: "몰라? 난 널 구하러 온 거야" },
       { start: "1:02", end: "1:09", en: "Now we runnin' wild, Yeah, I'm all you need, I'ma be your idol", ko: "이제 우린 거칠게 달려, 그래 난 네 전부야, 난 네 우상이 될 거야" },
     ]
+  },
+  {
+    id: 5,
+    title: "Defying gravity1",
+    artist: "Wicked",
+    videoId: "4qfS4MsnDEc",
+    segments: [
+      { start: 22, end: 28, en: "Something has changed within me", ko: "내 안에서 무언가 달라졌어" },
+      { start: 28, end: 34, en: "Something is not the same", ko: "이젠 예전과 같지 않아" },
+      { start: 34, end: 45, en: "I'm through with playing by, The rules of someone else's game", ko: "이제 남이 만든 규칙에 따르는 건 그만이야" },
+      { start: 45, end: 55, en: "Too late for second-guessing, Too late to go back to sleep", ko: "망설이기엔 너무 늦었고, 다시 눈 감기엔 늦었어" },
+      { start: 55, end: "1:05", en: "It's time to trust my instincts, Close my eyes, And leap.", ko: "이젠 내 본능을 믿고, 눈을 감은 채 뛰어들 때야" },
+      { start: "1:05", end: "1:21", en: "It's time to try defying gravity, I think I'll try defying gravity, And you can't pull me down", ko: "이젠 중력을 거슬러볼 거야, 그래, 난 거슬러 오를 거야, 넌 날 끌어내릴 수 없어" },
+      { start: "1:21", end: "1:26", en: "Can't I make you understand, You're having delusions of grandeur?", ko: "왜 넌 이해하지 못하니? 네 환상은 허황된 꿈일 뿐이야" },
+      { start: "1:26", end: "1:32", en: "I'm through accepting limits,'Cause someone says they're so", ko: "누가 정한 한계라 해서 받아들이진 않아" },
+      { start: "1:32", end: "1:39", en: "Some things I cannot change, But till I try I'll never know", ko: "바꿀 수 없는 게 있겠지만, 시도해 보지 않으면 알 수 없잖아" },
+      { start: "1:39", end: "1:45", en: "Too long I've been afraid of, Losing love I guess I've lost", ko: "사랑을 잃을까 두려워 너무 오래 지내왔지만, 아마 이미 잃은 걸지도 몰라" },
+      { start: "1:45", end: "1:52", en: "Well if that's love, It comes at much too high a cost", ko: "그게 사랑이라면, 대가는 너무도 크네" },
+      { start: "1:52", end: "2:09", en: "I'd sooner buy defying gravity, Kiss me goodbye, I'm defying gravity, And you can't pull me down", ko: "차라리 중력을 거슬러 오르겠어, 이별의 입맞춤을 해줘, 난 올라가고 있어, 넌 날 끌어내릴 수 없어" },
+    ]
+  },
+  {
+    id: 6,
+    title: "Defying gravity2",
+    artist: "Wicked",
+    videoId: "4qfS4MsnDEc",
+    segments: [
+      { start: "2:19", end: "2:26", en: "Together we'll be the greatest team, There's ever been", ko: "함께라면 우린 세상에서 가장 위대한 팀이 될 거야" },
+      { start: "2:26", end: "2:29", en: "Dreams the way we planned 'em", ko: "우리가 그려온 꿈처럼" },
+      { start: "2:29", end: "2:37", en: "If we work in tandem, There's no fight we cannot win", ko: "함께 힘을 합친다면, 못 이길 싸움은 없을 거야" },
+      { start: "2:37", end: "2:57", en: "Just you and I defying gravity, With you and I defying gravity, They'll never bring us down", ko: "너와 나, 함께 중력을 거슬러 오르면, 아무도 우릴 끌어내릴 수 없어!" },
+      { start: "2:57", end: "3:04", en: "I hope you're happy, I hope your happy now that your choosing this", ko: "네가 이 길을 택한 지금, 네가 행복하길 바라" },
+      { start: "3:04", end: "3:33", en: "I hope it brings you bliss, I really hope you get it, And you don't live to regret it", ko: "그게 너에게 기쁨이 되길, 진심으로 원하던 걸 얻길, 그리고 후회 없는 길이길 바라" },
+      { start: "3:33", end: "3:41", en: "So if you care to find me, Look to the Western sky", ko: "날 찾고 싶다면, 서쪽 하늘을 바라봐" },
+      { start: "3:41", end: "3:49", en: "As someone told me lately, Everyone deserves the chance to fly", ko: "최근에 누군가 말했지, 누구나 날아오를 기회를 가질 자격이 있다고" },
+      { start: "3:49", end: "3:55", en: "And if I'm flying solo, At least I'm flying free", ko: "혼자 날더라도, 최소한 자유롭게 나는 거야" },
+      { start: "3:55", end: "4:01", en: "To those who ground me, Take a message back from me", ko: "나를 붙잡아 두려던 사람들에게, 내 메시지를 전해 줘" },
+      { start: "4:01", end: "4:20", en: "Tell them how I am defying gravity, I'm flying high, defying gravity, And soon I'll match them in renown", ko: "내가 어떻게 중력을 거슬러 오르는지 전해줘, 난 높이 날고 있어, 곧 그들과 어깨를 나란히 하게 될 거야" },
+      { start: "4:20", end: "5:00", en: "And nobody in all of Oz, No Wizard that there is or was Is ever gonna bring me down", ko: "오즈의 그 누구도, 존재했거나 존재하는 어떤 마법사도 결코 날 끌어내릴 수 없어" },
+
+    ]
+  },
+  {
+    id: 7,
+    title: "24/7, 365",
+    artist: "elijah woods ",
+    videoId: "r8EVmdyJp-M",
+    segments: [
+      { start: "0:02", end: "0:10", en: "It's been 3 years and 6 whole months since I saw your face that night", ko: "지난 밤 네 얼굴을 보고 난 후 3년 6개월이 지났어" },
+      { start: "0:10", end: "0:17", en: "I took 5 seconds to fall in love and 2 more to make you mine", ko: "5초만에 사랑에 빠졌고 2초 후 넌 내 사람이 됐지" },
+      { start: "0:17", end: "0:25", en: "Now it's 4 in the morning, suns set and 7 minutes with you and it's heaven", ko: "지금은 새벽 4시인데, 너랑 함께 보낸 7분의 노을이 천국 같아" },
+      { start: "0:25", end: "0:31", en: "Ain't an hour that rolls by, I love you 24/7, 365", ko: "시간이 지나가도, 난 널 매순간 사랑할 거야" },
+      { start: "0:31", end: "0:36", en: "Give you my name, if you wanted to, Key to my heart if you want it too", ko: "네가 원한다면, 내 이름도 줄 수 있어,내 심장의 열쇠도 줄 수 있어" },
+      { start: "0:36", end: "0:40", en: "And I hope and pray that you'll stay right here", ko: "지금 네가 내 옆에 있기를 바라고 기도해" },
+      { start: "0:40", end: "0:47", en: "'til we're old and gray in our last few years, I'm on a knee I just need a yes", ko: "나이가 들어 백발이 될 때까지, 네 허락을 받기 위해 무릎을 꿇고 있어" },
+      { start: "0:47", end: "50", en: "A couple kids and a picket fence", ko: "두 아이와 울타리가 있는 집" },
+      { start: "50", end: "57", en: "Share the memories like an open book, Every page I read it still got me hooked", ko: "열려 있는 책처럼 추억을 공유하자, 그 책을 읽을 때마다 푹 빠질 것만 같아" },
+      { start: "57", end: "1:05", en: "And I'm fine spending my whole life on everything you like", ko: "네가 좋아하는 모든 것에 내 모든 인생을 쓰고 싶어" },
+      { start: "1:05", end: "1:10", en: "Is it obvious that all of this is right?", ko: "정말 괜찮을 거 같지 않아?" },
+      { start: "1:10", end: "1:17", en: "'Cause it's been 3 years and 6 whole months, since I saw your face that night", ko: "지난밤 네 얼굴을 보고 나서 3년 6개월이 지났어" },
+      { start: "1:17", end: "1:24", en: "I took 5 seconds to fall in love and 2 more to make you mine", ko: "5초만에 사랑에 빠졌고 2초 후에 넌 내 사람이 됐지" },
+      { start: "1:24", end: "1:31", en: "Now it's 4 in the morning, suns set and 7 minutes with you and it's heaven", ko: "지금은 새벽 4시고 너랑 함께 했던 7분의 노을이 아직도 천국 같아" },
+      { start: "1:31", end: "1:37", en: "Ain't an whole hour that rolls by, I love you 24/7, 365", ko: "시간이 지나가도 매 순간 널 사랑할 거야" },
+      { start: "1:37", end: "1:43", en: "I'll share the last bite of every meal, I'll wipe your tears when you're in your feels", ko: "마지막 한입은 항상 네게 양보할 거고, 네가 감정에 잠겨 있을 때, 눈물을 닦아 줄게" },
+      { start: "1:43", end: "1:50", en: "And I'll hold you close through a thunderstorm, When it's cold at night know I'll keep you warm", ko: "폭풍우 속에서도 널 꼭 안아 줄게, 추운 밤에는 널 따뜻하게 해줄게" },
+      { start: "1:50", end: "1:58", en: "'Cause I'm fine spending my whole life on everything you like", ko: "네가 좋아하는 모든 것들에 내 삶을 쓰고 싶어" },
+      { start: "1:58", end: "2:03", en: "Is it obvious that all of this is right?", ko: "너무 괜찮을 거 같지 않아?" },
+      { start: "2:03", end: "2:09", en: "'Cause it's been 3 years and 6 whole months, since I saw your face that night", ko: "지난 밤 네 얼굴을 보고 나서 3년 6개월이 지났어" },
+      { start: "2:09", end: "2:16", en: "It took 5 seconds to fall in love and 2 more to make you mine", ko: "5초 만에 사랑에 빠졌고 2초 후에 넌 내 사람이 됐지" },
+      { start: "2:16", end: "2:24", en: "Now it's 4 in the morning, suns set and 7 minutes with you and it's heaven", ko: "지금은 새벽 4시야, 너와 함께 했던 7분의 노을이 지금도 천국 같아" },
+      { start: "2:24", end: "2:43", en: "Ain't an whole hour that rolls by, I love you 24/7, 365", ko: "시간이 흘러가도, 매 순간 널 사랑해" },
+    ]
+  },
+  {
+    id: 8,
+    title: "Stay",
+    artist: "Justin Biber",
+    videoId: "kTJczUoc26U",
+    segments: [
+       { start: "30", end: "36", en: "I do the same thing I told you, that I never would, I told you I'd change, even when I knew I never could", 
+         ko: "난 절대 안 한다고 말했던 걸 또 해버려, 변하겠다고 했지만 사실 난 절대 변할 수 없다는 걸 알았어" },
+
+       { start: "36", end: "42", en: "know that I can't find nobody else, as good as you, I need you to stay", 
+         ko: "너만큼 좋은 사람은 어디에도 없어, 네가 곁에 있어 줘야 해" },
+
+       { start: "42", end: "48", en: "I get drunk, wake up, I'm wasted still, I realize the time that I wasted here", 
+         ko: "술에 취해 잠들고 깨어나도 여전히 망가져 있어, 여기서 흘려버린 시간이 아깝다는 걸 깨달아" },
+
+       { start: "48", end: "1:01", en: "I feel like you can't feel the way I feel, Oh, I'll be fucked up, if you can't be right here", 
+         ko: "넌 내 감정을 느끼지 못하는 것 같아, 네가 곁에 없으면 난 완전히 무너질 거야" },
+
+       { start: "1:01", end: "1:10", en:"", showEn: "Oh, I'll be fucked up, if you can't be right here, I do the same thing I told you, that I never would, even, when I knew I never could", 
+         ko: "네가 곁에 없으면 난 완전히 망가질 거야, 난 절대 안 한다던 걸 또 하고, 변하지 못한다는 걸 알면서도 말했었지" },
+
+       { start: "1:10", end: "1:15", en:"", showEn: "know that I can't find nobody else, as good as you, I need you to stay", 
+         ko: "너만큼 좋은 사람은 없어, 네가 내 곁에 있어 줘야 해" },
+
+       { start: "1:15", end: "1:26", en:"", showEn: "I do the same thing I told you, that I never would, I told you I'd change, even, when I knew I never could, know that I can't find nobody else, as good as you, I need you to stay", 
+         ko: "난 절대 안 한다던 걸 또 해, 변하겠다고 했지만 할 수 없다는 걸 알았어, 너만큼 좋은 사람은 없으니까 네가 꼭 있어 줘야 해" },
+
+      { start: "1:26", end: "1:30", en: "When I'm away from you, I miss your touch", 
+        ko: "네가 없을 때면 네 손길이 그리워" },
+
+      { start: "1:30", end: "1:36", en: "You're the reason I believe in love, It's been difficult for me to trust", 
+        ko: "네 덕분에 내가 사랑을 믿게 됐어, 난 원래 쉽게 믿지 못하는 사람이었거든" },
+
+      { start: "1:36", end: "1:42", en: "And I'm afraid that I'ma fuck it up, Ain't no way that I can leave you stranded", 
+        ko: "내가 다 망쳐버릴까 두려워, 하지만 널 혼자 두고 떠날 순 없어" },
+
+      { start: "1:42", end: "2:37", en: "'Cause you ain't ever left me empty-handed, And you know that I know, that I can't live without you", 
+        ko: "넌 단 한 번도 날 빈손으로 두지 않았으니까, 그리고 넌 알잖아, 나도 알아, 난 너 없인 살 수 없다는 걸" },
+    ]
   }
 ];

@@ -58,7 +58,7 @@ const DetailPage = () => {
     setFilled(Array(originalWords.length).fill(null));
     setWrongIndex(null);
     setTokens(shuffle(en.replace(/[.,]/g, '').split(' ')));
-    setShowKo(false);
+    //setShowKo(false);
     setAnswer(false);
   }, [en, originalWords.length]);
 
@@ -190,12 +190,12 @@ const DetailPage = () => {
       </div>
 
       <div className='translation'>
-        <button onClick={() => setShowKo(v => !v)} className='btn'>{showKo ? '번역 숨기기' : '번역'}</button>
+        <button onClick={() => setShowKo(v => !v)} className='btn' style={{marginRight:'10px'}}>{showKo ? '번역 숨기기' : '번역'}</button>
         <span id="ko-translation">{showKo ? ko : ''}</span>
       </div>
 
       <div className='answer' style={{ marginTop:'20px' }}>
-        <button onClick={() => setAnswer(v => !v)} className='btn'>{answer ? '답 숨기기' : '답 보기'}</button>
+        <button onClick={() => setAnswer(v => !v)} className='btn' style={{marginRight:'10px'}}>{answer ? '답 숨기기' : '답 보기'}</button>
         <span id="ko-translation">{answer ? en : ''}</span>
       </div>
     </div>
