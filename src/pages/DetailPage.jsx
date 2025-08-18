@@ -85,6 +85,21 @@ const DetailPage = () => {
   const handleSkip = () => {
     setCurrentIndex(i => Math.min(i + 1, segments.length - 1));
   };
+  //초기화
+  const handleReset = () => {
+    setFilled(Array(originalWords.length).fill(null)); //  모두 비우기
+    setTokens(shuffle([...originalWords]));            //  모든 단어 다시 풀어놓기
+    setWrongIndex(null);                               //  오답 표시 초기화
+  };
+  //이전
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(i => i - 1);   // 이전 세그먼트로
+    } else {
+      // 맨 앞이면 선택: 무시/알림/루프 등
+      console.log('첫 구간입니다');
+    }
+  };
 
   const breakAfter = useMemo(() => {
     const idxSet = new Set();
@@ -108,8 +123,10 @@ const DetailPage = () => {
 
       {/* ✅ 고유한 플레이어 컨테이너 id 사용 */}
       <div id={playerElementId} className="player" />
-
-      <h2 className="lesson-title">빈칸 채우기</h2>
+      <div className='title-area'>
+        <h2 className="lesson-title">빈칸 채우기</h2>
+        <button className='btn' onClick={handleReset}>초기화</button>
+      </div>
       <div className='control'>
         <button
           className={`loop-btn ${loop ? 'active' : ''}`}
@@ -135,6 +152,7 @@ const DetailPage = () => {
           </div>
           <div className='section-info'>
             <button className='next-btn' onClick={handleSkip}>넘어가기</button>
+            <button className='btn' onClick={handlePrev}>이전</button>
           </div>
         </div>
       </div>
@@ -153,7 +171,7 @@ const DetailPage = () => {
                   {filled[i] || word}
                 </span>
               </span>
-              {breakAfter.has(i) && <br className="comma-break" />}
+              {breakAfter.has(i) && <span className="comma-break" />}
             </React.Fragment>
           ))
         )}
