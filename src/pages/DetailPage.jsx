@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { IoReload } from "react-icons/io5";
 import { TfiLoop } from "react-icons/tfi";
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useYTLoopedSegments } from '../hooks/useYTLoopedSegments';
 import { lessons } from "../data/data";
 
@@ -10,8 +10,9 @@ function shuffle(arr) {
 }
 
 const DetailPage = () => {
-  const { id } = useParams();
-  const lessonId = Number(id);
+  const navigate = useNavigate();
+  const { id: routeId } = useParams();
+  const lessonId = Number(routeId);
   const lesson = lessons.find(l => l.id === lessonId);
 
   if (!lesson) {
@@ -23,7 +24,7 @@ const DetailPage = () => {
     );
   }
 
-  const playerElementId = `player-${id}`; // ✅ 고유 id
+  const playerElementId = `player-${routeId}`; // ✅ 고유 id
   const { videoId, segments, title, artist } = lesson;
 
   const { ytReady, currentIndex, setCurrentIndex, replayCurrent, loopRef } =
@@ -43,7 +44,7 @@ const DetailPage = () => {
 
   const [tokens, setTokens] = useState([]);
   const [filled, setFilled] = useState(() => Array(originalWords.length).fill(null));
-  const [wrongIndex, setWrongIndex] = useState(null);
+  const [wrongIds, setWrongIds] = useState(new Set());
   const isComplete = filled.every(Boolean);
 
   // loop UI ↔ 훅 loopRef 연동
@@ -56,30 +57,54 @@ const DetailPage = () => {
   // 문장 바뀌면 퍼즐 초기화
   useEffect(() => {
     setFilled(Array(originalWords.length).fill(null));
-    setWrongIndex(null);
-    setTokens(shuffle(en.replace(/[.,]/g, '').split(' ')));
-    //setShowKo(false);
+    setWrongIds(new Set());
+    const words = en.replace(/[.,]/g, '').split(' ');
+    const tokenObjs = words.map((w, i) => ({
+      id: `${i}-${w}-${Math.random().toString(36).slice(2, 8)}`, // 안정적 키
+      word: w,
+    }));
+  setTokens(shuffle(tokenObjs));
     setAnswer(false);
   }, [en, originalWords.length]);
 
-  const handleWordClick = (word, idx) => {
-    const emptyIndex = filled.findIndex((f) => f === null);
-    if (emptyIndex === -1) return;
+  const handleWordClick = (token) => {
+  const { word, id } = token;
+  const emptyIndex = filled.findIndex((f) => f === null);
+  if (emptyIndex === -1) return;
 
-    if (originalWords[emptyIndex] === word) {
-      const updated = [...filled];
-      updated[emptyIndex] = word;
-      setFilled(updated);
-      setWrongIndex(null);
-      setTokens(prev => prev.filter((_, i) => i !== idx));
-    } else {
-      setWrongIndex(idx);
-    }
-  };
+  const isCorrect = originalWords[emptyIndex] === word;
+
+  if (isCorrect) {
+    // 1) 빈칸 채우기
+    setFilled(prev => {
+      const next = [...prev];
+      next[emptyIndex] = word;
+      return next;
+    });
+
+    // 2) 맞춘 토큰은 버튼 목록에서 제거
+    setTokens(prev => prev.filter(t => t.id !== id));
+
+    // 3) 오답 강조 전부 원복(초기화)
+    setWrongIds(new Set());
+  } else {
+    // 오답이면 이 토큰만 'wrong' 유지
+    setWrongIds(prev => {
+      const n = new Set(prev);
+      n.add(id);
+      return n;
+    });
+  }
+};
 
   const handleNext = () => {
     if (!isComplete) return;
-    setCurrentIndex(i => Math.min(i + 1, segments.length - 1));
+    if (currentIndex < segments.length - 1) {
+      setCurrentIndex(i => Math.min(i + 1, segments.length - 1));
+    } else {
+      // ✅ 마지막 구간 + 완료 → 목록으로 이동
+      navigate('/');
+    }
   };
 
   const handleSkip = () => {
@@ -87,9 +112,14 @@ const DetailPage = () => {
   };
   //초기화
   const handleReset = () => {
-    setFilled(Array(originalWords.length).fill(null)); //  모두 비우기
-    setTokens(shuffle([...originalWords]));            //  모든 단어 다시 풀어놓기
-    setWrongIndex(null);                               //  오답 표시 초기화
+    setFilled(Array(originalWords.length).fill(null));
+    setWrongIds(new Set()); // ⬅️ 같이 초기화
+    const words = en.replace(/[.,]/g, '').split(' ');
+    const tokenObjs = words.map((w, i) => ({
+      id: `${i}-${w}-${Math.random().toString(36).slice(2, 8)}`,
+      word: w,
+    }));
+    setTokens(shuffle(tokenObjs));
   };
   //이전
   const handlePrev = () => {
@@ -151,7 +181,6 @@ const DetailPage = () => {
             </button>
           </div>
           <div className='section-info'>
-            <button className='next-btn' onClick={handleSkip}>넘어가기</button>
             <button className='btn' onClick={handlePrev}>이전</button>
           </div>
         </div>
@@ -178,13 +207,13 @@ const DetailPage = () => {
       </div>
 
       <div className='radom-word'>
-        {!showEn && tokens.map((word, i) => (
+        {!showEn && tokens.map((t) => (
           <button
-            key={i}
-            onClick={() => handleWordClick(word, i)}
-            className={wrongIndex === i ? 'wrong' : ''}
+            key={t.id}
+            onClick={() => handleWordClick(t)}
+            className={wrongIds.has(t.id) ? 'wrong' : ''}
           >
-            {word}
+            {t.word}
           </button>
         ))}
       </div>
@@ -198,6 +227,9 @@ const DetailPage = () => {
         <button onClick={() => setAnswer(v => !v)} className='btn' style={{marginRight:'10px'}}>{answer ? '답 숨기기' : '답 보기'}</button>
         <span id="ko-translation">{answer ? en : ''}</span>
       </div>
+      <div className='bottom-btn'>
+            <button className='next-btn' onClick={handleSkip}>넘어가기</button>
+          </div>
     </div>
   );
 };

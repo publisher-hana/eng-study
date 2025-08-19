@@ -55,6 +55,10 @@
     margin: 10px 0;
   }
 }
+.bottom-btn{
+   display: flex;
+   justify-content: flex-end;
+}
 .loop-btn.active{
   color: red;
 }
