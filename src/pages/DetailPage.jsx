@@ -1,9 +1,12 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { IoReload } from "react-icons/io5";
 import { TfiLoop } from "react-icons/tfi";
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useYTLoopedSegments } from '../hooks/useYTLoopedSegments';
 import { lessons } from "../data/data";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 function shuffle(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
@@ -14,6 +17,7 @@ const DetailPage = () => {
   const { id: routeId } = useParams();
   const lessonId = Number(routeId);
   const lesson = lessons.find(l => l.id === lessonId);
+  const sliderRef = useRef(null);
 
   if (!lesson) {
     return (
@@ -46,6 +50,26 @@ const DetailPage = () => {
   const [filled, setFilled] = useState(() => Array(originalWords.length).fill(null));
   const [wrongIds, setWrongIds] = useState(new Set());
   const isComplete = filled.every(Boolean);
+
+   const sliderSettings = useMemo(() => ({
+      infinite: false,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+       swipe: isComplete,  
+      draggable: true,      // 마우스 드래그도 허용
+      touchMove: true,
+      adaptiveHeight: true,
+
+      // 이동 직전에 검사
+      beforeChange: (_old, next) => setCurrentIndex(next),
+  }), [isComplete, setCurrentIndex]);
+
+   useEffect(() => {
+    setCurrentIndex(0);
+    sliderRef.current?.slickGoTo(0);
+  }, [lessonId, setCurrentIndex]);
 
   // loop UI ↔ 훅 loopRef 연동
   const [loop, setLoop] = useState(true);
@@ -100,7 +124,8 @@ const DetailPage = () => {
   const handleNext = () => {
     if (!isComplete) return;
     if (currentIndex < segments.length - 1) {
-      setCurrentIndex(i => Math.min(i + 1, segments.length - 1));
+      //setCurrentIndex(i => Math.min(i + 1, segments.length - 1));
+      sliderRef.current?.slickGoTo(currentIndex + 1); // ← 시각적으로 슬라이드
     } else {
       // ✅ 마지막 구간 + 완료 → 목록으로 이동
       navigate('/');
@@ -108,7 +133,11 @@ const DetailPage = () => {
   };
 
   const handleSkip = () => {
-    setCurrentIndex(i => Math.min(i + 1, segments.length - 1));
+    if (currentIndex < segments.length - 1) {
+      sliderRef.current?.slickGoTo(currentIndex + 1);
+    } else {
+      navigate('/');
+    }
   };
   //초기화
   const handleReset = () => {
@@ -124,7 +153,8 @@ const DetailPage = () => {
   //이전
   const handlePrev = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(i => i - 1);   // 이전 세그먼트로
+      //setCurrentIndex(i => i - 1);   // 이전 세그먼트로
+      sliderRef.current?.slickGoTo(currentIndex - 1); // ← 이전 슬라이드
     } else {
       // 맨 앞이면 선택: 무시/알림/루프 등
       console.log('첫 구간입니다');
@@ -144,6 +174,7 @@ const DetailPage = () => {
 
   return (
     <div className='lesson-wrap movie'>
+    
       <div className='link-back'>
         <Link to="/">← 목록으로</Link>
       </div>
@@ -157,6 +188,7 @@ const DetailPage = () => {
         <h2 className="lesson-title">빈칸 채우기</h2>
         <button className='btn' onClick={handleReset}>초기화</button>
       </div>
+    
       <div className='control'>
         <button
           className={`loop-btn ${loop ? 'active' : ''}`}
@@ -185,51 +217,80 @@ const DetailPage = () => {
           </div>
         </div>
       </div>
+      <Slider ref={sliderRef} {...sliderSettings} key={isComplete ? 'swipe-on' : 'swipe-off'}>
+        {segments.map((seg, idx) => {
+          // ✅ 여기서 변수 선언 (문장)
+          const active = idx === currentIndex;
+          const lineEn = active ? en : seg.en;           // 활성 슬라이드는 전역 상태 사용
+          const lineKo = active ? ko : seg.ko;
+          const lineShowEn = active ? showEn : seg.showEn;
 
-      <div className='quiz-block'>
-        {showEn ? (
-          <div className="show-en">
-            {showEn}
-          </div>
-        ) : (
-          // 기존 퍼즐 방식
-          originalWords.map((word, i) => (
-            <React.Fragment key={i}>
-              <span className="splice-cover">
-                <span className={filled[i] ? 'splice' : 'splice blank'}>
-                  {filled[i] || word}
-                </span>
-              </span>
-              {breakAfter.has(i) && <span className="comma-break" />}
-            </React.Fragment>
-          ))
-        )}
-      </div>
+          return (                                       // ✅ JSX는 return으로 반환
+            <div key={`${lessonId}-${idx}`} className="slide">
+              {active ? (
+                <>
+                  <div className='quiz-block'>
+                    {lineShowEn ? (
+                      <div className="show-en">{lineShowEn}</div>
+                    ) : (
+                      originalWords.map((word, i) => (
+                        <React.Fragment key={i}>
+                          <span className="splice-cover">
+                            <span className={filled[i] ? 'splice' : 'splice blank'}>
+                              {filled[i] || word}
+                            </span>
+                          </span>
+                          {breakAfter.has(i) && <span className="comma-break" />}
+                        </React.Fragment>
+                      ))
+                    )}
+                  </div>
 
-      <div className='radom-word'>
-        {!showEn && tokens.map((t) => (
-          <button
-            key={t.id}
-            onClick={() => handleWordClick(t)}
-            className={wrongIds.has(t.id) ? 'wrong' : ''}
-          >
-            {t.word}
-          </button>
-        ))}
-      </div>
+                  <div className='radom-word'>
+                    {!lineShowEn && tokens.map((t) => (
+                      <button
+                        key={t.id}
+                        onClick={() => handleWordClick(t)}
+                        className={wrongIds.has(t.id) ? 'wrong' : ''}
+                      >
+                        {t.word}
+                      </button>
+                    ))}
+                  </div>
 
-      <div className='translation'>
-        <button onClick={() => setShowKo(v => !v)} className='btn' style={{marginRight:'10px'}}>{showKo ? '번역 숨기기' : '번역'}</button>
-        <span id="ko-translation">{showKo ? ko : ''}</span>
-      </div>
+                  <div className='translation'>
+                    <button onClick={() => setShowKo(v => !v)} className='btn' style={{marginRight:'10px'}}>
+                      {showKo ? '번역 숨기기' : '번역'}
+                    </button>
+                    <span id="ko-translation">{showKo ? lineKo : ''}</span>
+                  </div>
 
-      <div className='answer' style={{ marginTop:'20px' }}>
-        <button onClick={() => setAnswer(v => !v)} className='btn' style={{marginRight:'10px'}}>{answer ? '답 숨기기' : '답 보기'}</button>
-        <span id="ko-translation">{answer ? en : ''}</span>
-      </div>
-      <div className='bottom-btn'>
-            <button className='next-btn' onClick={handleSkip}>넘어가기</button>
-          </div>
+                  <div className='answer' style={{ marginTop:'20px' }}>
+                    <button onClick={() => setAnswer(v => !v)} className='btn' style={{marginRight:'10px'}}>
+                      {answer ? '답 숨기기' : '답 보기'}
+                    </button>
+                    <span id="ko-translation">{answer ? lineEn : ''}</span>
+                  </div>
+
+                  <div className='bottom-btn'>
+                    <button className='next-btn' onClick={handleSkip}>넘어가기</button>
+                  </div>
+                </>
+              ) : (
+                // 비활성 슬라이드: 가벼운 프리뷰/높이 유지
+                <div className="quiz-block" style={{ minHeight: 240, opacity: 0.5 }}>
+                  {lineShowEn ? (
+                    <div className="show-en">{lineShowEn}</div>
+                  ) : (
+                    <div>{lineEn}</div>
+                  )}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </Slider>
+     
     </div>
   );
 };
