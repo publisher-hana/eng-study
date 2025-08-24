@@ -709,11 +709,11 @@ export const lessons = [
     artist: "",
     videoId: "X0LAe4W0OzQ",
     segments: [
-      //{ start: "4:45", end: "4:50", en: "You said goodbye to Bran. He's not going to die. I know it.", ko: "브랜에게 작별인사를 했구나. 그는 죽지 않을 거야. 난 알아." },
-      //{ start: "4:50", end: "4:58", en: "The Starks are hard to kill. My mother, she was very kind.", ko: "스타크 가문은 쉽게 죽지 않아. 내 어머니는 매우 친절한 분이셨지." },
-      //{ start: "4:58", end: "5:01", en: "The next time I see you, you'll be all in black.", ko: "다음에 널 볼 때는 네가 검은 옷을 입고 있겠구나." },
-      //{ start: "5:01", end: "5:10", en: "It was always my color. Farewell,", ko: "그건 늘 나의 색이었어. 잘 가라, 스노우. 그리고 너는…" },
-      //{ start: "5:26", end: "5:30", en: "There's great honor serving in the Night's Watch.", ko: "나이트워치에 봉사하는 건 큰 영광이야." },
+      { start: "4:45", end: "4:50", en: "You said goodbye to Bran. He's not going to die. I know it.", ko: "브랜에게 작별인사를 했구나. 그는 죽지 않을 거야. 난 알아." },
+      { start: "4:50", end: "4:58", en: "The Starks are hard to kill. My mother, she was very kind.", ko: "스타크 가문은 쉽게 죽지 않아. 내 어머니는 매우 친절한 분이셨지." },
+      { start: "4:58", end: "5:01", en: "The next time I see you, you'll be all in black.", ko: "다음에 널 볼 때는 네가 검은 옷을 입고 있겠구나." },
+      { start: "5:01", end: "5:10", en: "It was always my color. Farewell,", ko: "그건 늘 나의 색이었어. 잘 가라, 스노우. 그리고 너는…" },
+      { start: "5:26", end: "5:30", en: "There's great honor serving in the Night's Watch.", ko: "나이트워치에 봉사하는 건 큰 영광이야." },
       { start: "5:31", end: "5:35", en: "The Starks have manned, the Wall for thousands of years.", ko: "스타크 가문은 수천 년 동안 장벽을 지켜왔어." },
       { start: "5:35", end: "5:43", en: "And you are a Stark. You might not have my name, You have my blood", ko: "그리고 넌 스타크야. 내 성은 갖지 못했을지라도…" }
     ]
