@@ -343,22 +343,206 @@ export const lessons = [
   },
   {
     id: 13,
-    title: "Game of Thrones",
+    title: "Game of Thrones S1",
     category: "bdrama",
     artist: "",
     videoId: "4oyKDXC8K3A",
     segments: [
       { start: "0:29", end: "0:38", en: "and which one of you was a marksman at 10. keep practicing bran", ko: "너희 중 누가 열 살 때 명사수였지? 계속 연습해, 브랜" },
-      { start: "0:38", end: "0:45", en: "come on don't think too much bran", ko: "자, 너무 깊이 생각하지 마, 브랜" },
-      { start: "0:45", end: "0:59", en: "relax your bull armss", ko: "팔에 힘을 빼고 쏴" },
-      { start: "0:59", end: "1:07", en: "hot stock", ko: "뜨거운 말이야" }, 
-      { start: "1:07", end: "1:17", en: "the lady the Guardsman just rode in from the Hills captured a deserter from the Night's Watch", ko: "부인, 경비병이 언덕에서 말을 타고 들어왔습니다. 나이트 워치에서 탈영병을 붙잡았습니다." },
-      { start: "1:17", end: "1:27", en: "get a lot to settle their horses you have to what an else cat law is law my lady", ko: "말들을 진정시키세요. 법은 법입니다, 부인." },
-      { start: "1:27", end: "1:30", en: "tell bran he's coming too", ko: "브랜에게도 그가 온다고 말해" },
-      { start: "1:30", end: "1:39", en: "Ned ten is too young to say such things he won't be a boy forever", ko: "네드, 그는 아직 너무 어려. 하지만 영원히 소년으로 남지는 않을 거야." },
-      { start: "1:39", end: "2:05", en: "and winter is coming [Music]", ko: "그리고 겨울이 오고 있다 [음악]" },
-      { start: "2:05", end: "2:20", en: "I know I broke my eyes I don't know I'm a deserter I should have gone back to the wall one number", ko: "난 안다, 내 눈을 피했지. 난 탈영병이야. 장벽으로 돌아갔어야 했어." }
+      { start: "0:38", end: "0:45", en: "don't think too much bran", ko: "자, 너무 깊이 생각하지 마, 브랜" },
+      { start: "0:45", end: "0:48", en: "relax your bow arms", ko: "팔에 힘을 빼고 쏴" },
+      { start: "1:07", end: "1:17", en: "the lady, the Guardsman just rode in from the Hills, captured a deserter from the Night's Watch", ko: "부인, 경비병이 언덕에서 말을 타고 들어왔습니다. 나이트 워치에서 탈영병을 붙잡았습니다." },
+      { start: "1:17", end: "1:27", en: "Get the lads to saddle their horses, Do you have to?, the law is law", ko: "아이들에게 말을 안장 씌우게 하세요. 법은 법입니다, 부인." },
+      { start: "1:27", end: "1:30", en: "tell bran, he's coming too", ko: "브랜에게도 그가 온다고 말해" },
+      { start: "1:30", end: "1:39", en: "ten is too young to say such things, he won't be a boy forever", ko: "네드, 그는 아직 너무 어려. 하지만 영원히 소년으로 남지는 않을 거야." },
+      { start: "4:01", end: "4:07", en: "Do you understand why I had to kill him? That’s the old way", ko: "왜 내가 그를 죽여야 했는지 이해하느냐? 그것이 옛 방식이다." },
+      { start: "4:07", end: "4:16", en: "The man who passes the sentence should swing the sword,Is it true he saw the White-Walkers? ", ko: "판결을 내린 자가 직접 칼을 휘둘러야 한다." },
+      { start: "4:16", end: "4:23", en: "The White Walkers have been gone for thousands of years", ko: "화이트 워커들은 수천 년 동안 사라져 있었다." }
     ]
-  }
+  },
+  {
+  id: 14,
+  title: "Game of Thrones S2",
+  category: "bdrama",
+  artist: "",
+  videoId: "g9Bv6bQD8wg",
+  segments: [
+    { start: "0:16", end: "0:23", en: "What is the meaning of this?, Why was my daughter not brought to me at once?", ko: "이게 무슨 뜻이죠? 왜 제 딸을 바로 데려오지 않았습니까?" },
+    { start: "0:23", end: "0:30", en: "How dare you speak to your king this way?, I never meant to frighten the girl.", ko: "네 왕에게 어떻게 이런 식으로 말할 수 있느냐? 나는 아이를 놀라게 할 생각은 없었습니다."},
+    { start: "0:30", end: "0:33", en: "But we need to get this business done quickly", ko: "하지만 이 일을 빨리 끝내야 합니다," },
+    { start: "0:33", end: "0:39", en: "Your girl and that butcher’s boy attacked my son, Then the direwolf attacked him, and tore his arm", ko: "당신의 딸과 그 도살업자의 아들이 내 아들을 공격했어요, 그 다음엔 다이어울프가 내 아들을 공격해서 팔을 물어뜯었어요" },
+    { start: "0:39", end: "0:46", en: "He just bit him a little, He was hurting Micah.", ko: "그저 조금 물기만 했을 뿐이에요, 그가 마이카를 괴롭히고 있었어요." },
+    { start: "0:46", end: "0:50", en: "Josh told us what happened, you and that boy beat him, He had clubs while you set your wolf on him", ko: " 조쉬가 우리에게 말했어요, 당신과 그 소년이 그를 때렸다고,그는 곤봉을 들고 있었는데 네가 늑대를 풀었다고?" },
+    { start: "0:50", end: "0:52", en: "That's not what happened.", ko: "사실이 아니야." },
+    { start: "0:52", end: "0:58", en: "They all attacked me. I saw through my sword in the river.", ko: "그들이 모두 나를 공격했어요. 제 검이 강에 빠졌어요." },
+    { start: "0:58", end: "1:05", en: "He tells me one thing, she tells me another. Seven hells, what am I to make of this?", ko: "그는 이렇게 말하고, 그녀는 저렇게 말한다니… 칠지옥이여, 이걸 어떻게 해야 하지?" },
+    { start: "1:05", end: "1:24", en: "Where’s your other daughter, Ned? In bed, asleep? Sansa, come here darling.", ko: "네드, 다른 딸은 어디 있지? 자고 있나? 산사야, 이리 오너라." },
+    { start: "1:24", end: "1:42", en: "Tell it all and tell it true. It's a great crime to lie to a king.", ko: "사실대로 모두 말해야 한다. 왕에게 거짓말하는 건 큰 죄다." },
+    { start: "1:56", end: "2:03", en: "She's as wild as that animal of hers, I want her punished, Would you have me whip her through the streets?", ko: "그 애는 자기 짐승처럼 야생이야. 벌을 줘야 해. 거리를 끌고 다니며 채찍질이라도 할까?" },
+    { start: "2:03", end: "2:08", en: "Joffrey will bear these scars for the rest of his life", ko: "조프리는 평생 이 흉터를 안고 살겠지. 네가 꼬마한테 무기를 빼앗겼단 말이냐?" },
+    { start: "2:08", end: "2:14", en: "You let that little girl disarm you?", ko: "네가 꼬마한테 무기를 빼앗겼단 말이냐?" },
+    { start: "2:18", end: "2:25", en: "See to it that your daughter's disciplined, I'll do the same with my son", ko: "네드, 네 딸이 제대로 훈육되도록 하시오. 내 아들은 내가 기꺼이 다스리겠소" },
+    { start: "2:25", end: "2:32", en: "And what of the direwolf?, What of the beast that savaged your son?", ko: "그럼 다이어울프는 어떻게 할 건데요?, 네 아들을 공격한 짐승은 어떻게 할 거죠?"},
+    { start: "2:34", end: "2:40", en: "I forgot the damned wolf. We found no trace of the direwolf.", ko: " 그 빌어먹을 늑대는 잊었소. 다이어울프의 흔적은 찾을 수 없었소." },
+    { start: "2:40", end: "2:48", en: "So be it. We have another wolf.", ko: "그렇다면 할 수 없지. 다른 늑대가 있지 않은가." },
+    { start: "2:48", end: "2:53", en: "As you will.", ko: "뜻대로 하시지요." },
+    { start: "2:53", end: "2:57", en: "Get her a dog. She’ll be happier for it.", ko: "그 아이에게 개를 한 마리 주시오. 그러면 더 행복해질 거요." },
+    { start: "2:57", end: "3:05", en: "Lady didn’t bite anyone, She’s good, Lady was not there!", ko: "레이디는 아무도 물지 않았어요. 레이디는 착해요, 레이디는 그 자리에 있지 않았어요!" },
+    { start: "3:05", end: "3:13", en: "You leave her alone! Stop them! Don’t let them do it! the direwolf was a lady, Is this your command?", ko: "그 아이를 놔둬요! 막아야 해요! 그들이 그렇게 하게 두지 마세요! 제발요, 그 다이어울프는 레이디라구요. 정말 이렇게 하시겠습니까?" },
+    { start: "3:20", end: "3:29", en: "Chained up outside", ko: "밖에 묶여 있습니다" },
+    { start: "3:32", end: "3:39", en: "I think the girls should be taken to their rooms.", ko: "아이들을 방으로 데려가는 게 좋겠소." },
+    { start: "3:39", end: "3:34", en: "If it must be done, I’ll do it myself. some trick.", ko: "해야 한다면 내가 직접 하겠소. 그 늑대는 북방의 것, 어떤 술책일지도 모르지." },
+    { start: "3:45", end: "3:52", en: "The wolf is of the North, She deserves better than a butcher.", ko: "하지만 도살자보다는 나은 죽음을 맞아야 하오." }
+
+  ]
+},
+{
+  id: 15,
+  title: "Friends",
+  category: "adrama",
+  artist: "",
+  videoId: "Lhpu3GdlV3w",
+  segments: [
+      { 
+        start: "0:00", 
+        end: "0:06", 
+        en: "I've had a really good time tonight. I rarely connect with someone this much on the first date", 
+        ko: "오늘 정말 즐거웠어요. 첫 데이트에서 이렇게 잘 통하는 사람은 거의 없었거든요." 
+      },
+      { 
+        start: "0:06", 
+        end: "0:10", 
+        en: "Me neither", 
+        ko: "저도 그래요." 
+      },
+      { 
+        start: "0:10", 
+        end: "0:14", 
+        en: "I've had a really good time", 
+        ko: "정말 즐거운 시간이었어요." 
+      },
+      { 
+        start: "0:14", 
+        end: "0:18", 
+        en: "Are you going to eat that bread?", 
+        ko: "그 빵 드실 건가요?" 
+      },
+      { 
+        start: "0:18", 
+        end: "0:23", 
+        en: "I just like the smell", 
+        ko: "저는 그냥 냄새가 좋아서요." 
+      },
+      { 
+        start: "0:28", 
+        end: "0:32", 
+        en: "Would you like to move over to the couch?", 
+        ko: "소파로 옮겨 앉으실래요?" 
+      },
+      { 
+        start: "0:37", 
+        end: "0:42", 
+        en: "Maybe I'll just turn down the lights a little, how about all the way?", 
+        ko: "조명을 조금만 줄일까요? 아니면 완전히 꺼버릴까요?" 
+      },
+      { 
+        start: "1:08", 
+        end: "1:10", 
+        en: "Are those your teeth?", 
+        ko: "그거 당신 진짜 치아예요?" 
+      },
+      { 
+        start: "1:14", 
+        end: "1:20", 
+        en: "They're insanely white. I... I did that for you", 
+        ko: "엄청 하얗네요. 나… 당신을 위해 그렇게 한 거예요." 
+      }
+    ]
+
+  },
+
+  {
+  id: 16,
+  title: "Friends",
+  category: "adrama",
+  artist: "",
+  videoId: "wz3hVeCsfNg",
+  segments: [
+    { 
+      start: "2:31", 
+      end: "2:34", 
+      en: "What? It's still going on.", 
+      ko: "뭐라고요? 아직도 계속되고 있다고요?" 
+    },
+    { 
+      start: "2:34", 
+      end: "2:37", 
+      en: "Come on. Seriously, when did it end?", 
+      ko: "에이, 정말 언제 끝난 거예요?" 
+    },
+    { 
+      start: "2:37", 
+      end: "2:42", 
+      en: "I am serious. I mean, we're all over each other all the time.", 
+      ko: "진심이에요. 우리 늘 서로에게 얽혀 있잖아요." 
+    },
+    { 
+      start: "2:42", 
+      end: "2:45", 
+      en: "You know where you are better than I do. I was just curious.", 
+      ko: "알겠어요. 당신이 저보다 잘 알겠죠. 그냥 궁금해서요." 
+    },
+    { 
+      start: "2:45", 
+      end: "2:47", 
+      en: "Why don't you just calm down?", 
+      ko: "피비, 진정 좀 하세요." 
+    },
+    { 
+      start: "2:48", 
+      end: "2:54", 
+      en: "I want you to just get all your facts before you run around telling everybody that, you know, you're the only hot couple.", 
+      ko: "당신이 유일한 멋진 커플이라고 떠들고 다니기 전에, 사실부터 제대로 확인하라고요." 
+    },
+    { 
+      start: "2:54", 
+      end: "3:00", 
+      en: "God, I woke the beast. Um, I was wrong. Obviously,", 
+      ko: "세상에, 짐승을 깨웠네. 음… 내가 잘못했어요. 분명히"
+    },
+    { 
+      start: "3:02", 
+      end: "3:07", 
+      en: "as long as you know that Chandler and I are also very hot and fiery", 
+      ko: "괜찮아요. 그러니까, 당신이 아는 한 챈들러랑 저도 아주 뜨겁고 열정적이에요" 
+    },
+    { 
+      start: "3:07", 
+      end: "3:13", 
+      en: "just as hot as you, our flame, It is on fire", 
+      ko: "챈들러랑 저도 아주 뜨겁고 열정적이에요. 그러니까, 당신만큼이나요." 
+    },
+    { 
+      start: "3:13", 
+      end: "3:17", 
+      en: "Hey, Monica, here's your broom back.", 
+      ko: "헤이, 모니카, 여기 빗자루 돌려줄게." 
+    },
+    { 
+      start: "3:23", 
+      end: "3:28", 
+      en: "You know, that night meant a lot to me, too. And it wasn't cuz I was in a bad place or anything.", 
+      ko: "그날 밤은 나한테도 정말 큰 의미였어요. 내가 힘들어서 그런 게 아니에요." 
+    },
+    { 
+      start: "3:28", 
+      end: "3:40", 
+      en: "It just meant a lot to me, cuz you're really hot.", 
+      ko: "그냥 당신이 정말 매력적이어서 나한테 큰 의미였던 거예요." 
+    },
+  ]
+
+},
+
 
 ];
