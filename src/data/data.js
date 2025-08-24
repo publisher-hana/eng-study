@@ -312,5 +312,22 @@ export const lessons = [
     ]
     
   },
+  {
+    id: 12,
+    title: "Levitating",
+    artist: "Dua Lipa",
+    videoId: "TUVcZfQe-Kw",
+    segments: [
+      { start: 3, end: 9, en: "If you wanna run away with me, I know a galaxy, And I can take you for a ride", ko: "나와 함께 도망치고 싶다면, 내가 아는 은하계가 있어, 그리고 널 태워줄 수 있어" },
+      { start: 9, end: 14, en: "I had a premonition that we fell into a rhythm, Where the music don't stop for life", ko: "우리가 리듬에 빠져들 거라는 예감이 들었어, 음악이 평생 멈추지 않는 곳으로" },
+      { start: 14, end: 19, en: "Glitter in the sky, glitter in my eyes, Shining just the way I like", ko: "하늘에는 반짝이는 빛, 내 눈에도 반짝이는 빛, 내가 좋아하는 방식대로 빛나고 있어" },
+      { start: 19, end: 24, en: "If you're feeling like you need a little bit of company, You met me at the perfect time", ko: "네게 약간의 동행이 필요하다고 느낀다면, 넌 완벽한 타이밍에 날 만난 거야" },
+      { start: 24, end: 32, en: "You want me, I want you, baby, My sugarboo, I'm levitating, The Milky Way, we're renegading", ko: "넌 날 원하고, 나도 널 원해, 자기야, 내 사랑, 난 공중부양 중이야, 은하수를 누비며, 우린 새롭게 나아가" },
+      { start: 32, end: "1:41", en: "I got you, moonlight, you're my starlight, I need you all night, come on, dance with me", ko: "난 널 가졌어, 달빛, 넌 나의 별빛이야, 밤새도록 네가 필요해, 이리 와, 나와 춤을 춰" },
+      { start: "1:57", end: "2:15", en: "You can fly away with me tonight, Baby, let me take you for a ride", ko: "오늘 밤 나와 함께 날아갈 수 있어, 자기야, 내가 태워줄게" },
+      { start: "2:15", end: "2:19", en: "My love is like a rocket, watch it blast off, And I'm feeling so electric, dance my ass off", ko: "내 사랑은 로켓 같아, 발사되는 걸 봐, 난 짜릿한 기분이야, 미친 듯이 춤을 춰" },
+      { start: "2:19", end: "2:23", en: "And even if I wanted to, I can't stop", ko: "그리고 원한다 해도, 멈출 수가 없어" },
+    ]
+  },
 
 ];

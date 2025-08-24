@@ -1,12 +1,11 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { IoReload } from "react-icons/io5";
 import { TfiLoop } from "react-icons/tfi";
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useYTLoopedSegments } from '../hooks/useYTLoopedSegments';
 import { lessons } from "../data/data";
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 function shuffle(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
@@ -17,7 +16,6 @@ const DetailPage = () => {
   const { id: routeId } = useParams();
   const lessonId = Number(routeId);
   const lesson = lessons.find(l => l.id === lessonId);
-  const sliderRef = useRef(null);
 
   if (!lesson) {
     return (
@@ -37,95 +35,90 @@ const DetailPage = () => {
       segments,
       playerElementId, // ✅ 전달
     });
-
-  const [showKo, setShowKo] = useState(false);
-  const [answer, setAnswer] = useState(false);
-
-  const { en, ko, showEn } = segments[currentIndex];
-
-  const originalWords = useMemo(() => en.replace(/[,]/g, '').split(' '), [en]);
-  const parts = useMemo(() => en.split(',').map(s => s.trim()), [en]);
-
-  const [tokens, setTokens] = useState([]);
-  const [filled, setFilled] = useState(() => Array(originalWords.length).fill(null));
-  const [wrongIds, setWrongIds] = useState(new Set());
-  const isComplete = filled.every(Boolean);
-
-   const sliderSettings = useMemo(() => ({
-      infinite: false,
-      speed: 300,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-       swipe: isComplete,  
-      draggable: true,      // 마우스 드래그도 허용
-      touchMove: true,
-      adaptiveHeight: true,
-
-      // 이동 직전에 검사
-      beforeChange: (_old, next) => setCurrentIndex(next),
-  }), [isComplete, setCurrentIndex]);
-
-   useEffect(() => {
-    setCurrentIndex(0);
-    sliderRef.current?.slickGoTo(0);
-  }, [lessonId, setCurrentIndex]);
+  
+  const swiperRef = useRef(null);
+  const [quizData, setQuizData] = useState([]);
 
   // loop UI ↔ 훅 loopRef 연동
   const [loop, setLoop] = useState(true);
   useEffect(() => { loopRef.current = loop; }, [loop, loopRef]);
 
   // 레슨 변경 시 인덱스 초기화(안전)
-  useEffect(() => { setCurrentIndex(0); }, [lessonId, setCurrentIndex]);
-
-  // 문장 바뀌면 퍼즐 초기화
   useEffect(() => {
-    setFilled(Array(originalWords.length).fill(null));
-    setWrongIds(new Set());
-    const words = en.replace(/[.,]/g, '').split(' ');
-    const tokenObjs = words.map((w, i) => ({
-      id: `${i}-${w}-${Math.random().toString(36).slice(2, 8)}`, // 안정적 키
-      word: w,
-    }));
-  setTokens(shuffle(tokenObjs));
-    setAnswer(false);
-  }, [en, originalWords.length]);
+    setCurrentIndex(0);
+    const initialQuizData = lessons.find(l => l.id === lessonId)?.segments.map(segment => {
+      const { en } = segment;
+      const originalWords = en.replace(/[.,]/g, '').split(' ');
+      const tokenObjs = originalWords.map((w, i) => ({
+        id: `${i}-${w}-${Math.random().toString(36).slice(2, 8)}`,
+        word: w,
+      }));
+      const parts = en.split(',').map(s => s.trim());
+      const breakAfter = new Set();
+      let acc = 0;
+      parts.forEach((p, i) => {
+        const cnt = p.replace(/[.]/g, '').split(/\s+/).filter(Boolean).length;
+        acc += cnt;
+        if (i < parts.length - 1) breakAfter.add(acc - 1);
+      });
 
-  const handleWordClick = (token) => {
-  const { word, id } = token;
-  const emptyIndex = filled.findIndex((f) => f === null);
-  if (emptyIndex === -1) return;
+      return {
+        en: segment.en,
+        ko: segment.ko,
+        showEn: segment.showEn,
+        originalWords,
+        parts,
+        breakAfter,
+        tokens: shuffle(tokenObjs),
+        filled: Array(originalWords.length).fill(null),
+        wrongIds: new Set(),
+        isComplete: false,
+        showKo: false,
+        showAnswer: false,
+      };
+    }) || [];
+    setQuizData(initialQuizData);
+  }, [lessonId, setCurrentIndex]);
 
-  const isCorrect = originalWords[emptyIndex] === word;
+  useEffect(() => {
+    if (swiperRef.current?.swiper) {
+      swiperRef.current.swiper.slideTo(currentIndex);
+    }
+  }, [currentIndex]);
 
-  if (isCorrect) {
-    // 1) 빈칸 채우기
-    setFilled(prev => {
-      const next = [...prev];
-      next[emptyIndex] = word;
-      return next;
+  const isComplete = quizData[currentIndex]?.isComplete ?? false;
+
+  const handleWordClick = (token, index) => {
+    setQuizData(prevData => {
+      const newData = [...prevData];
+      const quiz = { ...newData[index] };
+      const { word, id } = token;
+      const emptyIndex = quiz.filled.findIndex((f) => f === null);
+      if (emptyIndex === -1) return prevData;
+
+      const isCorrect = quiz.originalWords[emptyIndex] === word;
+
+      if (isCorrect) {
+        const nextFilled = [...quiz.filled];
+        nextFilled[emptyIndex] = word;
+        quiz.filled = nextFilled;
+        quiz.tokens = quiz.tokens.filter(t => t.id !== id);
+        quiz.wrongIds = new Set();
+        quiz.isComplete = nextFilled.every(Boolean);
+      } else {
+        const newWrongIds = new Set(quiz.wrongIds);
+        newWrongIds.add(id);
+        quiz.wrongIds = newWrongIds;
+      }
+      newData[index] = quiz;
+      return newData;
     });
-
-    // 2) 맞춘 토큰은 버튼 목록에서 제거
-    setTokens(prev => prev.filter(t => t.id !== id));
-
-    // 3) 오답 강조 전부 원복(초기화)
-    setWrongIds(new Set());
-  } else {
-    // 오답이면 이 토큰만 'wrong' 유지
-    setWrongIds(prev => {
-      const n = new Set(prev);
-      n.add(id);
-      return n;
-    });
-  }
-};
+  };
 
   const handleNext = () => {
     if (!isComplete) return;
     if (currentIndex < segments.length - 1) {
-      //setCurrentIndex(i => Math.min(i + 1, segments.length - 1));
-      sliderRef.current?.slickGoTo(currentIndex + 1); // ← 시각적으로 슬라이드
+      swiperRef.current?.swiper.slideNext();
     } else {
       // ✅ 마지막 구간 + 완료 → 목록으로 이동
       navigate('/');
@@ -134,47 +127,49 @@ const DetailPage = () => {
 
   const handleSkip = () => {
     if (currentIndex < segments.length - 1) {
-      sliderRef.current?.slickGoTo(currentIndex + 1);
-    } else {
-      navigate('/');
+      swiperRef.current?.swiper.slideNext();
     }
   };
   //초기화
-  const handleReset = () => {
-    setFilled(Array(originalWords.length).fill(null));
-    setWrongIds(new Set()); // ⬅️ 같이 초기화
-    const words = en.replace(/[.,]/g, '').split(' ');
-    const tokenObjs = words.map((w, i) => ({
-      id: `${i}-${w}-${Math.random().toString(36).slice(2, 8)}`,
-      word: w,
-    }));
-    setTokens(shuffle(tokenObjs));
+  const handleReset = (index) => {
+    setQuizData(prevData => {
+      const newData = [...prevData];
+      const quiz = newData[index];
+      const words = quiz.en.replace(/[.,]/g, '').split(' ');
+      const tokenObjs = words.map((w, i) => ({
+        id: `${i}-${w}-${Math.random().toString(36).slice(2, 8)}`,
+        word: w,
+      }));
+      newData[index] = {
+        ...quiz,
+        filled: Array(quiz.originalWords.length).fill(null),
+        wrongIds: new Set(),
+        tokens: shuffle(tokenObjs),
+        isComplete: false,
+      };
+      return newData;
+    });
   };
   //이전
   const handlePrev = () => {
-    if (currentIndex > 0) {
-      //setCurrentIndex(i => i - 1);   // 이전 세그먼트로
-      sliderRef.current?.slickGoTo(currentIndex - 1); // ← 이전 슬라이드
-    } else {
-      // 맨 앞이면 선택: 무시/알림/루프 등
-      console.log('첫 구간입니다');
-    }
+    swiperRef.current?.swiper.slidePrev();
   };
 
-  const breakAfter = useMemo(() => {
-    const idxSet = new Set();
-    let acc = 0;
-    parts.forEach((p, i) => {
-      const cnt = p.replace(/[.]/g, '').split(/\s+/).filter(Boolean).length;
-      acc += cnt;
-      if (i < parts.length - 1) idxSet.add(acc - 1);
-    });
-    return idxSet;
-  }, [parts]);
+  const onSlideChange = (swiper) => {
+    setCurrentIndex(swiper.activeIndex);
+  };
+
+  const toggleShowKo = (index, value) => {
+    setQuizData(prev => prev.map((q, i) => i === index ? { ...q, showKo: value } : q));
+  };
+
+  const toggleShowAnswer = (index, value) => {
+    setQuizData(prev => prev.map((q, i) => i === index ? { ...q, showAnswer: value } : q));
+  };
+
 
   return (
     <div className='lesson-wrap movie'>
-    
       <div className='link-back'>
         <Link to="/">← 목록으로</Link>
       </div>
@@ -186,9 +181,8 @@ const DetailPage = () => {
       <div id={playerElementId} className="player" />
       <div className='title-area'>
         <h2 className="lesson-title">빈칸 채우기</h2>
-        <button className='btn' onClick={handleReset}>초기화</button>
+        <button className='btn' onClick={() => handleReset(currentIndex)}>초기화</button>
       </div>
-    
       <div className='control'>
         <button
           className={`loop-btn ${loop ? 'active' : ''}`}
@@ -217,80 +211,61 @@ const DetailPage = () => {
           </div>
         </div>
       </div>
-      <Slider ref={sliderRef} {...sliderSettings} key={isComplete ? 'swipe-on' : 'swipe-off'}>
-        {segments.map((seg, idx) => {
-          // ✅ 여기서 변수 선언 (문장)
-          const active = idx === currentIndex;
-          const lineEn = active ? en : seg.en;           // 활성 슬라이드는 전역 상태 사용
-          const lineKo = active ? ko : seg.ko;
-          const lineShowEn = active ? showEn : seg.showEn;
 
-          return (                                       // ✅ JSX는 return으로 반환
-            <div key={`${lessonId}-${idx}`} className="slide">
-              {active ? (
-                <>
-                  <div className='quiz-block'>
-                    {lineShowEn ? (
-                      <div className="show-en">{lineShowEn}</div>
-                    ) : (
-                      originalWords.map((word, i) => (
-                        <React.Fragment key={i}>
-                          <span className="splice-cover">
-                            <span className={filled[i] ? 'splice' : 'splice blank'}>
-                              {filled[i] || word}
-                            </span>
-                          </span>
-                          {breakAfter.has(i) && <span className="comma-break" />}
-                        </React.Fragment>
-                      ))
-                    )}
-                  </div>
-
-                  <div className='radom-word'>
-                    {!lineShowEn && tokens.map((t) => (
-                      <button
-                        key={t.id}
-                        onClick={() => handleWordClick(t)}
-                        className={wrongIds.has(t.id) ? 'wrong' : ''}
-                      >
-                        {t.word}
-                      </button>
-                    ))}
-                  </div>
-
-                  <div className='translation'>
-                    <button onClick={() => setShowKo(v => !v)} className='btn' style={{marginRight:'10px'}}>
-                      {showKo ? '번역 숨기기' : '번역'}
-                    </button>
-                    <span id="ko-translation">{showKo ? lineKo : ''}</span>
-                  </div>
-
-                  <div className='answer' style={{ marginTop:'20px' }}>
-                    <button onClick={() => setAnswer(v => !v)} className='btn' style={{marginRight:'10px'}}>
-                      {answer ? '답 숨기기' : '답 보기'}
-                    </button>
-                    <span id="ko-translation">{answer ? lineEn : ''}</span>
-                  </div>
-
-                  <div className='bottom-btn'>
-                    <button className='next-btn' onClick={handleSkip}>넘어가기</button>
-                  </div>
-                </>
-              ) : (
-                // 비활성 슬라이드: 가벼운 프리뷰/높이 유지
-                <div className="quiz-block" style={{ minHeight: 240, opacity: 0.5 }}>
-                  {lineShowEn ? (
-                    <div className="show-en">{lineShowEn}</div>
-                  ) : (
-                    <div>{lineEn}</div>
-                  )}
+      <Swiper
+        ref={swiperRef}
+        onSlideChange={onSlideChange}
+        allowTouchMove={isComplete || (quizData[currentIndex]?.showAnswer ?? false)}
+        className="quiz-swiper"
+      >
+        {quizData.map((quiz, index) => (
+          <SwiperSlide key={index}>
+            <div className='quiz-block'>
+              {quiz.showEn ? (
+                <div className="show-en">
+                  {quiz.showEn}
                 </div>
+              ) : (
+                quiz.originalWords.map((word, i) => (
+                  <React.Fragment key={i}>
+                    <span className="splice-cover">
+                      <span className={quiz.filled[i] ? 'splice' : 'splice blank'}>
+                        {quiz.filled[i] || word}
+                      </span>
+                    </span>
+                    {quiz.breakAfter.has(i) && <span className="comma-break" />}
+                  </React.Fragment>
+                ))
               )}
             </div>
-          );
-        })}
-      </Slider>
-     
+
+            <div className='radom-word'>
+              {!quiz.showEn && quiz.tokens.map((t) => (
+                <button
+                  key={t.id}
+                  onClick={() => handleWordClick(t, index)}
+                  className={quiz.wrongIds.has(t.id) ? 'wrong' : ''}
+                >
+                  {t.word}
+                </button>
+              ))}
+            </div>
+
+            <div className='translation'>
+              <button onClick={() => toggleShowKo(index, !quiz.showKo)} className='btn' style={{ marginRight: '10px' }}>{quiz.showKo ? '번역 숨기기' : '번역'}</button>
+              <span id="ko-translation">{quiz.showKo ? quiz.ko : ''}</span>
+            </div>
+
+            <div className='answer' style={{ marginTop: '10px' }}>
+              <button onClick={() => toggleShowAnswer(index, !quiz.showAnswer)} className='btn' style={{ marginRight: '10px' }}>{quiz.showAnswer ? '답 숨기기' : '답 보기'}</button>
+              <span id="ko-translation">{quiz.showAnswer ? quiz.en : ''}</span>
+            </div>
+            <div className='bottom-btn' style={{ marginTop: '10px' }}>
+                  <button className='next-btn' onClick={handleSkip}>넘어가기</button>
+                </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
