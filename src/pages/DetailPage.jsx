@@ -215,7 +215,8 @@ const DetailPage = () => {
       <Swiper
         ref={swiperRef}
         onSlideChange={onSlideChange}
-        allowTouchMove={isComplete || (quizData[currentIndex]?.showAnswer ?? false)}
+        allowSwipeToPrev={true}
+        allowSwipeToNext={isComplete || (quizData[currentIndex]?.showAnswer ?? false)}
         className="quiz-swiper"
       >
         {quizData.map((quiz, index) => (
