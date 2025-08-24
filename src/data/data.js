@@ -688,13 +688,34 @@ export const lessons = [
     artist: "",
     videoId: "X0LAe4W0OzQ",
     segments: [
-       //{ start: "3:13", end: "3:18", en: "Your uncle's in the Night's Watch.", ko: "네 삼촌은 나이트워치에 계시지." },
-      //{ start: "3:18", end: "3:21", en: "He will be going back there", ko: "그는 거기로 돌아가게 될 거야" },
-      //{ start: "3:21", end: "3:25", en: "Preparing for a night with your family?", ko: "가족이랑 밤을 보낼 준비 중인가?" },
-      //{ start: "3:28", end: "3:31", en: "I've always wanted to see the Wall", ko: "난 늘 그 장벽을 보고 싶었어." },
-      //{ start: "3:35", end: "3:42", en: "My greatest accomplishment, you’re an Eddard Stark’s bastard, aren’t you?", ko: "내 최고의 업적이지. 넌 에다드 스타크의 사생아지, 그렇지?" },
-      //{ start: "3:42", end: "3:50", en: "Did I offend you?, you are the bastard.", ko: "기분 상했나? 넌 사생아가 맞잖아." },
-      { start: "3:51", end: "3:59", en: "Eddard Stark is my father, and Lady Stark is not your mother.", ko: "하지만 에다드 스타크 경은 내 아버지고, 레이디 스타크는 네 어머니가 아니지." }
+      { start: "3:13", end: "3:18", en: "Your uncle's in the Night's Watch.", ko: "네 삼촌은 나이트워치에 계시지." },
+      { start: "3:18", end: "3:21", en: "He will be going back there", ko: "그는 거기로 돌아가게 될 거야" },
+      { start: "3:21", end: "3:25", en: "Preparing for a night with your family?", ko: "가족이랑 밤을 보낼 준비 중인가?" },
+      { start: "3:28", end: "3:31", en: "I've always wanted to see the Wall", ko: "난 늘 그 장벽을 보고 싶었어." },
+      { start: "3:35", end: "3:42", en: "My greatest accomplishment, you’re an Eddard Stark’s bastard, aren’t you?", ko: "내 최고의 업적이지. 넌 에다드 스타크의 사생아지, 그렇지?" },
+      { start: "3:42", end: "3:50", en: "Did I offend you?, you are the bastard.", ko: "기분 상했나? 넌 사생아가 맞잖아." },
+      { start: "3:51", end: "3:59", en: "Eddard Stark is my father, and Lady Stark is not your mother.", ko: "하지만 에다드 스타크 경은 내 아버지고, 레이디 스타크는 네 어머니가 아니지." },
+      { start: "4:02", end: "4:06", en: "Bastard, let me give you some advice.", ko: "사생아이여, 내가 충고 하나 해주지." },
+      { start: "4:06", end: "4:11", en: "Never forget what you are. The rest of the world will not.", ko: "네가 어떤 존재인지 절대 잊지 마라. 세상은 결코 잊지 않으니까." },
+      { start: "4:11", end: "4:17", en: "Wear it like armor, and it can never be used to hurt you.", ko: "그걸 갑옷처럼 걸쳐라. 그러면 그걸로는 널 해칠 수 없을 테니." },
+      { start: "4:17", end: "4:22", en: "What the hell do you know about being a bastard?", ko: "당신이 사생아인 게 뭔데 뭘 안다고요?" },
+      { start: "4:22", end: "4:27", en: "All dwarves are bastards in their father's eyes.", ko: "난쟁이는 모두 아버지 눈에는 사생아이니까." }
+    ]
+  },
+  {
+    id: 20,
+    title: "Game of Thrones S1-3",
+    category: "bdrama",
+    artist: "",
+    videoId: "X0LAe4W0OzQ",
+    segments: [
+      //{ start: "4:45", end: "4:50", en: "You said goodbye to Bran. He's not going to die. I know it.", ko: "브랜에게 작별인사를 했구나. 그는 죽지 않을 거야. 난 알아." },
+      //{ start: "4:50", end: "4:58", en: "The Starks are hard to kill. My mother, she was very kind.", ko: "스타크 가문은 쉽게 죽지 않아. 내 어머니는 매우 친절한 분이셨지." },
+      //{ start: "4:58", end: "5:01", en: "The next time I see you, you'll be all in black.", ko: "다음에 널 볼 때는 네가 검은 옷을 입고 있겠구나." },
+      //{ start: "5:01", end: "5:10", en: "It was always my color. Farewell,", ko: "그건 늘 나의 색이었어. 잘 가라, 스노우. 그리고 너는…" },
+      //{ start: "5:26", end: "5:30", en: "There's great honor serving in the Night's Watch.", ko: "나이트워치에 봉사하는 건 큰 영광이야." },
+      { start: "5:31", end: "5:35", en: "The Starks have manned, the Wall for thousands of years.", ko: "스타크 가문은 수천 년 동안 장벽을 지켜왔어." },
+      { start: "5:35", end: "5:43", en: "And you are a Stark. You might not have my name, You have my blood", ko: "그리고 넌 스타크야. 내 성은 갖지 못했을지라도…" }
     ]
   },
 
