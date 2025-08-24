@@ -111,3 +111,13 @@
 .show-en{
   word-break: keep-all;
 }
+
+.sort{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+  select{
+    padding: 6px;
+    font-size: 14px;
+  }
+}

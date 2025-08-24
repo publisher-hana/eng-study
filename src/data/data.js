@@ -2,6 +2,7 @@ export const lessons = [
   {
     id: 1,
     title: "Golden1",            
+    category: "popsong",
     artist: "Kpop demon hunters",                
     videoId: "yebNIHKAC4A",         
     segments: [
@@ -22,6 +23,7 @@ export const lessons = [
   {
     id: 2,
     title: "Golden2",
+    category: "popsong",
     artist: "Kpop demon hunters",
     videoId: "yebNIHKAC4A",
     segments: [
@@ -37,6 +39,7 @@ export const lessons = [
   {
     id: 3,
     title: "Soda Pop",
+    category: "popsong",
     artist: "Kpop demon hunters",
     videoId: "983bBbJx0Mk",
     segments: [
@@ -56,6 +59,7 @@ export const lessons = [
   {
     id: 4,
     title: "Your Idol1",
+    category: "popsong",
     artist: "Kpop demon hunters",
     videoId: "cWppAbqm9I8",
     segments: [
@@ -76,6 +80,7 @@ export const lessons = [
   {
     id: 5,
     title: "Defying gravity1",
+    category: "popsong",
     artist: "Wicked",
     videoId: "4qfS4MsnDEc",
     segments: [
@@ -96,6 +101,7 @@ export const lessons = [
   {
     id: 6,
     title: "Defying gravity2",
+    category: "popsong",
     artist: "Wicked",
     videoId: "4qfS4MsnDEc",
     segments: [
@@ -117,6 +123,7 @@ export const lessons = [
   {
     id: 7,
     title: "24/7, 365",
+    category: "popsong",
     artist: "elijah woods ",
     videoId: "r8EVmdyJp-M",
     segments: [
@@ -148,6 +155,7 @@ export const lessons = [
   {
     id: 8,
     title: "Stay",
+    category: "popsong",
     artist: "Justin Biber",
     videoId: "kTJczUoc26U",
     segments: [
@@ -188,6 +196,7 @@ export const lessons = [
   {
     id: 9,
     title: "Savage Love1",
+    category: "popsong",
     artist: "BTS",
     videoId: "qvu4nPMyl3U",
     segments: [
@@ -230,6 +239,7 @@ export const lessons = [
   {
     id: 10,
     title: "Love is an open door",
+    category: "popsong",
     artist: "Frozen",
     videoId: "kQDw88hEr2c",
     segments: [
@@ -279,6 +289,7 @@ export const lessons = [
   {
     id: 11,
     title: "Steal the show",
+    category: "popsong",
     artist: "Lauv",
     videoId: "DwuJeGYlYyw",
     segments: [
@@ -315,6 +326,7 @@ export const lessons = [
   {
     id: 12,
     title: "Levitating",
+    category: "popsong",
     artist: "Dua Lipa",
     videoId: "TUVcZfQe-Kw",
     segments: [
@@ -329,5 +341,24 @@ export const lessons = [
       { start: "2:19", end: "2:23", en: "And even if I wanted to, I can't stop", ko: "그리고 원한다 해도, 멈출 수가 없어" },
     ]
   },
+  {
+    id: 13,
+    title: "Game of Thrones",
+    category: "bdrama",
+    artist: "",
+    videoId: "4oyKDXC8K3A",
+    segments: [
+      { start: "0:29", end: "0:38", en: "and which one of you was a marksman at 10. keep practicing bran", ko: "너희 중 누가 열 살 때 명사수였지? 계속 연습해, 브랜" },
+      { start: "0:38", end: "0:45", en: "come on don't think too much bran", ko: "자, 너무 깊이 생각하지 마, 브랜" },
+      { start: "0:45", end: "0:59", en: "relax your bull armss", ko: "팔에 힘을 빼고 쏴" },
+      { start: "0:59", end: "1:07", en: "hot stock", ko: "뜨거운 말이야" }, 
+      { start: "1:07", end: "1:17", en: "the lady the Guardsman just rode in from the Hills captured a deserter from the Night's Watch", ko: "부인, 경비병이 언덕에서 말을 타고 들어왔습니다. 나이트 워치에서 탈영병을 붙잡았습니다." },
+      { start: "1:17", end: "1:27", en: "get a lot to settle their horses you have to what an else cat law is law my lady", ko: "말들을 진정시키세요. 법은 법입니다, 부인." },
+      { start: "1:27", end: "1:30", en: "tell bran he's coming too", ko: "브랜에게도 그가 온다고 말해" },
+      { start: "1:30", end: "1:39", en: "Ned ten is too young to say such things he won't be a boy forever", ko: "네드, 그는 아직 너무 어려. 하지만 영원히 소년으로 남지는 않을 거야." },
+      { start: "1:39", end: "2:05", en: "and winter is coming [Music]", ko: "그리고 겨울이 오고 있다 [음악]" },
+      { start: "2:05", end: "2:20", en: "I know I broke my eyes I don't know I'm a deserter I should have gone back to the wall one number", ko: "난 안다, 내 눈을 피했지. 난 탈영병이야. 장벽으로 돌아갔어야 했어." }
+    ]
+  }
 
 ];
