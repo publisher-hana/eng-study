@@ -462,87 +462,225 @@ export const lessons = [
   },
 
   {
-  id: 16,
-  title: "Friends",
-  category: "adrama",
-  artist: "",
-  videoId: "wz3hVeCsfNg",
-  segments: [
-    { 
-      start: "2:31", 
-      end: "2:34", 
-      en: "What? It's still going on.", 
-      ko: "뭐라고요? 아직도 계속되고 있다고요?" 
-    },
-    { 
-      start: "2:34", 
-      end: "2:37", 
-      en: "Come on. Seriously, when did it end?", 
-      ko: "에이, 정말 언제 끝난 거예요?" 
-    },
-    { 
-      start: "2:37", 
-      end: "2:42", 
-      en: "I am serious. I mean, we're all over each other all the time.", 
-      ko: "진심이에요. 우리 늘 서로에게 얽혀 있잖아요." 
-    },
-    { 
-      start: "2:42", 
-      end: "2:45", 
-      en: "You know where you are better than I do. I was just curious.", 
-      ko: "알겠어요. 당신이 저보다 잘 알겠죠. 그냥 궁금해서요." 
-    },
-    { 
-      start: "2:45", 
-      end: "2:47", 
-      en: "Why don't you just calm down?", 
-      ko: "피비, 진정 좀 하세요." 
-    },
-    { 
-      start: "2:48", 
-      end: "2:54", 
-      en: "I want you to just get all your facts before you run around telling everybody that, you know, you're the only hot couple.", 
-      ko: "당신이 유일한 멋진 커플이라고 떠들고 다니기 전에, 사실부터 제대로 확인하라고요." 
-    },
-    { 
-      start: "2:54", 
-      end: "3:00", 
-      en: "God, I woke the beast. Um, I was wrong. Obviously,", 
-      ko: "세상에, 짐승을 깨웠네. 음… 내가 잘못했어요. 분명히"
-    },
-    { 
-      start: "3:02", 
-      end: "3:07", 
-      en: "as long as you know that Chandler and I are also very hot and fiery", 
-      ko: "괜찮아요. 그러니까, 당신이 아는 한 챈들러랑 저도 아주 뜨겁고 열정적이에요" 
-    },
-    { 
-      start: "3:07", 
-      end: "3:13", 
-      en: "just as hot as you, our flame, It is on fire", 
-      ko: "챈들러랑 저도 아주 뜨겁고 열정적이에요. 그러니까, 당신만큼이나요." 
-    },
-    { 
-      start: "3:13", 
-      end: "3:17", 
-      en: "Hey, Monica, here's your broom back.", 
-      ko: "헤이, 모니카, 여기 빗자루 돌려줄게." 
-    },
-    { 
-      start: "3:23", 
-      end: "3:28", 
-      en: "You know, that night meant a lot to me, too. And it wasn't cuz I was in a bad place or anything.", 
-      ko: "그날 밤은 나한테도 정말 큰 의미였어요. 내가 힘들어서 그런 게 아니에요." 
-    },
-    { 
-      start: "3:28", 
-      end: "3:40", 
-      en: "It just meant a lot to me, cuz you're really hot.", 
-      ko: "그냥 당신이 정말 매력적이어서 나한테 큰 의미였던 거예요." 
-    },
-  ]
+    id: 16,
+    title: "Friends",
+    category: "adrama",
+    artist: "",
+    videoId: "wz3hVeCsfNg",
+    segments: [
+      { 
+        start: "2:31", 
+        end: "2:34", 
+        en: "What? It's still going on.", 
+        ko: "뭐라고요? 아직도 계속되고 있다고요?" 
+      },
+      { 
+        start: "2:34", 
+        end: "2:37", 
+        en: "Come on. Seriously, when did it end?", 
+        ko: "에이, 정말 언제 끝난 거예요?" 
+      },
+      { 
+        start: "2:37", 
+        end: "2:42", 
+        en: "I am serious. I mean, we're all over each other all the time.", 
+        ko: "진심이에요. 우리 늘 서로에게 얽혀 있잖아요." 
+      },
+      { 
+        start: "2:42", 
+        end: "2:45", 
+        en: "You know where you are better than I do. I was just curious.", 
+        ko: "알겠어요. 당신이 저보다 잘 알겠죠. 그냥 궁금해서요." 
+      },
+      { 
+        start: "2:45", 
+        end: "2:47", 
+        en: "Why don't you just calm down?", 
+        ko: "피비, 진정 좀 하세요." 
+      },
+      { 
+        start: "2:48", 
+        end: "2:54", 
+        en: "I want you to just get all your facts before you run around telling everybody that, you know, you're the only hot couple.", 
+        ko: "당신이 유일한 멋진 커플이라고 떠들고 다니기 전에, 사실부터 제대로 확인하라고요." 
+      },
+      { 
+        start: "2:54", 
+        end: "3:00", 
+        en: "God, I woke the beast. Um, I was wrong. Obviously,", 
+        ko: "세상에, 짐승을 깨웠네. 음… 내가 잘못했어요. 분명히"
+      },
+      { 
+        start: "3:02", 
+        end: "3:07", 
+        en: "as long as you know that Chandler and I are also very hot and fiery", 
+        ko: "괜찮아요. 그러니까, 당신이 아는 한 챈들러랑 저도 아주 뜨겁고 열정적이에요" 
+      },
+      { 
+        start: "3:07", 
+        end: "3:13", 
+        en: "just as hot as you, our flame, It is on fire", 
+        ko: "챈들러랑 저도 아주 뜨겁고 열정적이에요. 그러니까, 당신만큼이나요." 
+      },
+      { 
+        start: "3:13", 
+        end: "3:17", 
+        en: "Hey, Monica, here's your broom back.", 
+        ko: "헤이, 모니카, 여기 빗자루 돌려줄게." 
+      },
+      { 
+        start: "3:23", 
+        end: "3:28", 
+        en: "You know, that night meant a lot to me, too. And it wasn't cuz I was in a bad place or anything.", 
+        ko: "그날 밤은 나한테도 정말 큰 의미였어요. 내가 힘들어서 그런 게 아니에요." 
+      },
+      { 
+        start: "3:28", 
+        end: "3:40", 
+        en: "It just meant a lot to me, cuz you're really hot.", 
+        ko: "그냥 당신이 정말 매력적이어서 나한테 큰 의미였던 거예요." 
+      },
+    ]
 
-},
+  },
+  {
+    id: 17,
+    title: "Friends",
+    category: "adrama",
+    artist: "",
+    videoId: "Z7UBB41rF_o",
+    segments: [
+       { 
+        start: "0:09", 
+        end: "0:16", 
+        en: "You don't have to stop having fun just because I'm here, Kathy didn't cheat on all of you.", 
+        ko: "내가 있다고 해서 재미있게 노는 걸 멈출 필요는 없어. 캐시가 너희 모두를 속인 건 아니잖아." 
+      },
+      { 
+        start: "0:16", 
+        end: "0:27", 
+        en: "Well, except you. [Laughter]", 
+        ko: "음, 너 빼고는. [웃음]" 
+      },
+      { 
+        start: "0:27", 
+        end: "0:32", 
+        en: "I don't think that you should leave Chandler alone, I mean, it's only been two days since you broke up with Kathy.", 
+        ko: "이봐, 조이. 챈들러를 혼자 두면 안 된다고 생각해. 아직 캐시랑 헤어진 지 이틀밖에 안 됐잖아." 
+      },
+      { 
+        start: "0:32", 
+        end: "0:40", 
+        en: "Maybe you can go fishing next week, Look, there's nothing I can do for him right now. He's still in his sweatpants, That's only phase one.", 
+        ko: "아마 다음주엔 낚시나 가면 되겠지. 지금은 내가 그를 위해 해줄 게 없어. 아직도 추리닝만 입고 있잖아. 그건 1단계일 뿐이야." 
+      },
+      { 
+        start: "0:40", 
+        end: "0:46", 
+        en: "I'll be back for phase two, I would never miss phase two, What's phase two?", 
+        ko: "2단계 때 다시 올게. 2단계는 절대 놓치지 않아. 2단계가 뭔데?" 
+      },
+      { 
+        start: "0:46", 
+        end: "0:53", 
+        en: "Getting drunk and going to a strip club, How does going to a strip club make him better?", 
+        ko: "술에 취하고 스트립 클럽에 가는 거지. 스트립 클럽에 간다고 그가 어떻게 나아져? " 
+      },
+      { 
+        start: "0:52", 
+        end: "0:58", 
+        en: " There are naked ladies there. and it helps him get to phase three, picturing yourself with other women.", 
+        ko: "거기 벗은 여자들이 있잖아. 그리고 그게 3단계로 가는 데 도움이 돼. 다른 여자들과 함께 있는 걸 상상하는 거지." 
+      },
+      { 
+        start: "0:58", 
+        end: "1:07", 
+        en: "There are naked ladies there, too. Yeah. Would you give me one minute, please?", 
+        ko: "거기도 벗은 여자들이 있잖아. 그래. 잠깐만 시간 좀 줄래?" 
+      },
+    ]
+  },
+  {
+    id: 18,
+    title: "Harry Potter",
+    category: "book",
+    artist: "the chamber of secrets1",
+    videoId: "vUutY1S0jVU",
+    segments: [
+      { 
+        start: "0:54", 
+        end: "0:59", 
+        en: "Not for the first time, an argument had broken out over breakfast at number four Privet Drive.", 
+        ko: "프리벳가 4번지에서 아침 식사 도중에 언쟁이 벌어진 것은 이번이 처음이 아니었다." 
+      },
+      { 
+        start: "0:59", 
+        end: "1:09", 
+        en: "Mr. Vernon Dursley had been woken in the early hours of the morning by a loud hooting noise from his nephew Harry's room, Third time this week", 
+        ko: "버논 더즐리가 조카 해리의 방에서 들려온 큰 부엉이 울음소리 때문에 새벽 일찍 잠에서 깼다. 이번 주만 벌써 세 번째였다." 
+      },
+      { 
+        start: "1:09", 
+        end: "1:15", 
+        en: "he roared across the table, If you can't control that owl, it'll have to go", 
+        ko: "그는 식탁 너머로 고래고래 소리쳤다. “그 부엉이를 통제하지 못하겠다면, 당장 내보내" 
+      },
+      { 
+        start: "1:15", 
+        end: "1:20", 
+        en: "Harry tried yet again to explain. She's bored, he said.", 
+        ko: "해리는 또다시 설명하려 애썼다. “그녀가 지루해 하는 거예요.”" 
+      },
+      { 
+        start: "1:20", 
+        end: "1:26", 
+        en: "She's used to lying around outside. If I could just let her out at night. Do I look stupid?", 
+        ko: "그녀는 날아다니는 데 익숙하거든요. 밤에라도 내보내 줄 수 있다면—” “내가 바보로 보이냐?”" 
+      },
+      { 
+        start: "1:26", 
+        end: "1:31", 
+        en: "Snarled Uncle Vernon, a bit of fried egg dangling from his bushy mustache.", 
+        ko: "버럭 소리를 지르는 더즐리 아저씨의 텁수룩한 콧수염에 달걀 부침 조각이 매달려 있었다. “나는 알아.”" 
+      },
+      { 
+        start: "1:31", 
+        end: "1:37", 
+        en: "I know what'll happen if that owl's let out. He exchanged dark looks with his wife,", 
+        ko: "“그 부엉이를 내보내면 무슨 일이 생길지.” 그는 아내와 어두운 눈빛을 주고받았다." 
+      },
+      { 
+        start: "1:38", 
+        end: "1:48", 
+        en: "Harry tried to argue back, but his words were drowned by a long, loud, Belch from the Dursley son, Dudley. I want more bacon.", 
+        ko: "해리는 반박하려 했지만, 그의 말은 더즐리 집 아들의 길고 큰 트림 소리에 묻혀 버렸다. 베이컨 더 줘." 
+      },
+      { 
+        start: "1:47", 
+        end: "1:54", 
+        en: "There's more in the frying pan, sweets, said Aunt Petunia, turning misty eyes on her massive son.", 
+        ko: "“후라이팬에 있단다, 자기야.” 페투니아 이모는 거대한 아들을 애틋하게 바라보며 말했다." 
+      },
+      { 
+        start: "1:54", 
+        end: "2:02", 
+        en: "We must feed you up while we've got the chance. I don't like the sound of that school food. Nonsense, Petunia.", 
+        ko: "“기회 있을 때 잘 먹여야 해. 학교 음식은 마음에 안 들어.” “허튼소리 마, 페투니아.”" 
+      },
+      { 
+        start: "2:02", 
+        end: "2:06", 
+        en: "I never went hungry when I was at Smelting, said Uncle Vernon heartily.", 
+        ko: "“난 절대 스멜팅 학교에 다닐 때 굶은 적이 없었어.” 더즐리 아저씨가 호탕하게 말했다." 
+      },
+      { 
+        start: "2:6", 
+        end: "2:20", 
+        en: "Dudley gets enough, don't you, son? Dudley, who was so large his bottom drooped over either side of the kitchen chair, grinned and turned to Harry. Past the frying pan.", 
+        ko:"더들리는 충분히 배부르지, 그렇지 아들아?, 더들리는 몸집이 너무 커서 엉덩이가 부엌 의자 양쪽으로 흘러내렸고 씨익 웃으며 해리 쪽으로 돌아섰다, 프라이팬 좀 건네."
+      }
+    ]
+  }
 
 
-];
+]
