@@ -426,7 +426,7 @@ export const lessons = [
         end: "0:18", 
         en: "Are you going to eat that bread?", 
         ko: "그 빵 드실 건가요?" 
-      },
+      }, 
       { 
         start: "0:18", 
         end: "0:23", 
@@ -680,7 +680,23 @@ export const lessons = [
         ko:"더들리는 충분히 배부르지, 그렇지 아들아?, 더들리는 몸집이 너무 커서 엉덩이가 부엌 의자 양쪽으로 흘러내렸고 씨익 웃으며 해리 쪽으로 돌아섰다, 프라이팬 좀 건네."
       }
     ]
-  }
+  },
+  {
+    id: 19,
+    title: "Game of Thrones S1-2",
+    category: "bdrama",
+    artist: "",
+    videoId: "X0LAe4W0OzQ",
+    segments: [
+       //{ start: "3:13", end: "3:18", en: "Your uncle's in the Night's Watch.", ko: "네 삼촌은 나이트워치에 계시지." },
+      //{ start: "3:18", end: "3:21", en: "He will be going back there", ko: "그는 거기로 돌아가게 될 거야" },
+      //{ start: "3:21", end: "3:25", en: "Preparing for a night with your family?", ko: "가족이랑 밤을 보낼 준비 중인가?" },
+      //{ start: "3:28", end: "3:31", en: "I've always wanted to see the Wall", ko: "난 늘 그 장벽을 보고 싶었어." },
+      //{ start: "3:35", end: "3:42", en: "My greatest accomplishment, you’re an Eddard Stark’s bastard, aren’t you?", ko: "내 최고의 업적이지. 넌 에다드 스타크의 사생아지, 그렇지?" },
+      //{ start: "3:42", end: "3:50", en: "Did I offend you?, you are the bastard.", ko: "기분 상했나? 넌 사생아가 맞잖아." },
+      { start: "3:51", end: "3:59", en: "Eddard Stark is my father, and Lady Stark is not your mother.", ko: "하지만 에다드 스타크 경은 내 아버지고, 레이디 스타크는 네 어머니가 아니지." }
+    ]
+  },
 
 
 ]
