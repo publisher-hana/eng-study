@@ -711,13 +711,47 @@ export const lessons = [
     segments: [
       { start: "4:45", end: "4:50", en: "You said goodbye to Bran. He's not going to die. I know it.", ko: "브랜에게 작별인사를 했구나. 그는 죽지 않을 거야. 난 알아." },
       { start: "4:50", end: "4:58", en: "The Starks are hard to kill. My mother, she was very kind.", ko: "스타크 가문은 쉽게 죽지 않아. 내 어머니는 매우 친절한 분이셨지." },
-      { start: "4:58", end: "5:01", en: "The next time I see you, you'll be all in black.", ko: "다음에 널 볼 때는 네가 검은 옷을 입고 있겠구나." },
-      { start: "5:01", end: "5:10", en: "It was always my color. Farewell,", ko: "그건 늘 나의 색이었어. 잘 가라, 스노우. 그리고 너는…" },
+      { start: "4:58", end: "5:02", en: "The next time I see you, you'll be all in black.", ko: "다음에 널 볼 때는 네가 검은 옷을 입고 있겠구나." },
+      { start: "5:01", end: "5:10", en: "It was always my color, Farewell,", ko: "그건 늘 나의 색이었어. 잘 가라, 스노우. 그리고 너는…" },
       { start: "5:26", end: "5:30", en: "There's great honor serving in the Night's Watch.", ko: "나이트워치에 봉사하는 건 큰 영광이야." },
-      { start: "5:31", end: "5:35", en: "The Starks have manned, the Wall for thousands of years.", ko: "스타크 가문은 수천 년 동안 장벽을 지켜왔어." },
+      { start: "5:31", end: "5:35", en: "The Starks have manned the Wall for thousands of years.", ko: "스타크 가문은 수천 년 동안 장벽을 지켜왔어." },
       { start: "5:35", end: "5:43", en: "And you are a Stark. You might not have my name, You have my blood", ko: "그리고 넌 스타크야. 내 성은 갖지 못했을지라도…" }
     ]
   },
+  {
+    id: 21,
+    title: "Game of Thrones S1-4",
+    category: "bdrama",
+    artist: "",
+    videoId: "lLI8egPJxkQ",
+    segments: [
+      { start: "26", end: "30", en: "All these years and I still feel like an outsider when I come here.", ko: "이렇게 많은 세월이 흘렀는데도, 여기 오면 난 여전히 이방인처럼 느껴져" },
+      { start: "31", end: "35", en: "You have five northern children, you're not an outsider.", ko: "당신에겐 다섯 명의 북부 자식이 있는데, 이방인일 리 없어" },
+      { start: "35", end: "40", en: "I wonder if the old gods agree.", ko: "옛 신들도 그렇게 생각할지 궁금하군." },
+      { start: "41", end: "44", en: "it's your gods with all the rules", ko: "온갖 규칙을 들이대는 건 네 신들이잖아" },
+      { start: "2:20", end: "2:23", en: "Why's your mother so dead set on us getting pretty for the king?", ko: "네 어머니는 왜 우리가 왕 앞에서 잘 보이도록 꾸미는 데 그렇게 집착하시는 거야?" },
+    ]
+  },
+  
+  {
+    id: 22,
+    title: "Game of Thrones S2-1",
+    category: "bdrama",
+    artist: "",
+    videoId: "X0LAe4W0OzQ",
+    segments: [
+      { start: "8:06", end: "8:12", en: "it appears you're the least useless person here.", ko: "보니까 여기선 네가 그나마 가장 쓸모 있는 놈이군" },
+      { start: "8:13", end: "8:16", en: "There's only so much I can stomach in a day.", ko: "하루에 내가 참을 수 있는 건 한계가 있거든" },
+      { start: "8:17", end: "8:26", en: "I don't need him to be charming, I need him to turn this bunch of thieves and runaways into men of the Night's Watch.", ko: "난 그가 매력적일 필요는 없어. 이 도둑과 도망자들 무리를 나이트 워치의 사나이들로 바꿔놓길 원할 뿐이지." },
+      { start: "8:26", end: "8:30", en: "It was always my color, Farewell,", ko: "그건 늘 나의 색이었어. 잘 가라, 스노우. 그리고 너는…" },
+      { start: "9:13", end: "9:18", en: "Don't stand so still, it's harder to hit a moving target", ko: "가만히 서 있지 마, 움직이는 표적을 맞히는 게 더 힘들어." },
+      { start: "9:25", end: "9:28", en: "I could just hold my sword out and let you do the work for me", ko: "내가 그냥 검만 들고 서 있어도 네가 알아서 날 찌르겠구나." },
+      { start: "9:45", end: "9:50", en: "It's either me or this cold, and it doesn't appear to be going anywhere.", ko: "나 아니면 이 추위인데, 이 추위는 사라질 것 같지 않군" },
+      { start: "9:50", end: "9:53", en: "Will you stop at Winterfell on your way South?", ko: "남쪽으로 가는 길에 윈터펠에 들를 건가?" },
+      { start: "9:52", end: "9:58", en: "I expect I will. Gods know there aren't many feather beds between here and King's Landing.", ko: "아마 그럴 거야. 신들도 알지, 여기서 킹스랜딩까지 가는 길엔 폭신한 침대가 별로 없다는 걸." }
+    ]
+  },
+  
 
 
 ]

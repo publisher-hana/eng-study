@@ -21,7 +21,7 @@ const Home = () => {
 
   // sortOrder 상태에 따라 filteredLessons를 정렬합니다.
   const sortedLessons = [...filteredLessons].sort((a, b) => {
-    if (sortOrder === 'latest') {
+    if (sortOrder === 'oldest') {
       return b.id - a.id; // 최신순 (id 내림차순)
     } else {
       return a.id - b.id; // 오래된순 (id 오름차순)
