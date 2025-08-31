@@ -75,6 +75,7 @@ const DetailPage = () => {
         isComplete: false,
         showKo: false,
         showAnswer: false,
+        wrongAttempts: 0,
       };
     }) || [];
     setQuizData(initialQuizData);
@@ -105,10 +106,28 @@ const DetailPage = () => {
         quiz.tokens = quiz.tokens.filter(t => t.id !== id);
         quiz.wrongIds = new Set();
         quiz.isComplete = nextFilled.every(Boolean);
+        quiz.wrongAttempts = 0;
       } else {
-        const newWrongIds = new Set(quiz.wrongIds);
-        newWrongIds.add(id);
-        quiz.wrongIds = newWrongIds;
+        quiz.wrongAttempts = (quiz.wrongAttempts || 0) + 1;
+
+        if (quiz.wrongAttempts >= 3) {
+          const correctWord = quiz.originalWords[emptyIndex];
+          const nextFilled = [...quiz.filled];
+          nextFilled[emptyIndex] = correctWord;
+          quiz.filled = nextFilled;
+
+          const correctToken = quiz.tokens.find(t => t.word === correctWord);
+          if (correctToken) {
+            quiz.tokens = quiz.tokens.filter(t => t.id !== correctToken.id);
+          }
+          quiz.wrongIds = new Set();
+          quiz.wrongAttempts = 0;
+          quiz.isComplete = nextFilled.every(Boolean);
+        } else {
+          const newWrongIds = new Set(quiz.wrongIds);
+          newWrongIds.add(id);
+          quiz.wrongIds = newWrongIds;
+        }
       }
       newData[index] = quiz;
       return newData;
@@ -146,6 +165,7 @@ const DetailPage = () => {
         wrongIds: new Set(),
         tokens: shuffle(tokenObjs),
         isComplete: false,
+        wrongAttempts: 0,
       };
       return newData;
     });

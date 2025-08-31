@@ -687,6 +687,7 @@ export const lessons = [
     category: "bdrama",
     artist: "",
     videoId: "X0LAe4W0OzQ",
+     desc:"티리온과 존의 대화",
     segments: [
       { start: "3:13", end: "3:18", en: "Your uncle's in the Night's Watch.", ko: "네 삼촌은 나이트워치에 계시지." },
       { start: "3:18", end: "3:21", en: "He will be going back there", ko: "그는 거기로 돌아가게 될 거야" },
@@ -708,6 +709,7 @@ export const lessons = [
     category: "bdrama",
     artist: "",
     videoId: "X0LAe4W0OzQ",
+    desc:"블랙 캐슬로 떠나는 존 스노우",
     segments: [
       { start: "4:45", end: "4:50", en: "You said goodbye to Bran. He's not going to die. I know it.", ko: "브랜에게 작별인사를 했구나. 그는 죽지 않을 거야. 난 알아." },
       { start: "4:50", end: "4:58", en: "The Starks are hard to kill. My mother, she was very kind.", ko: "스타크 가문은 쉽게 죽지 않아. 내 어머니는 매우 친절한 분이셨지." },
@@ -724,6 +726,7 @@ export const lessons = [
     category: "bdrama",
     artist: "",
     videoId: "lLI8egPJxkQ",
+    desc:'캐틀린과 스타크의 대화',
     segments: [
       { start: "26", end: "30", en: "All these years and I still feel like an outsider when I come here.", ko: "이렇게 많은 세월이 흘렀는데도, 여기 오면 난 여전히 이방인처럼 느껴져" },
       { start: "31", end: "35", en: "You have five northern children, you're not an outsider.", ko: "당신에겐 다섯 명의 북부 자식이 있는데, 이방인일 리 없어" },
@@ -739,6 +742,7 @@ export const lessons = [
     category: "bdrama",
     artist: "",
     videoId: "X0LAe4W0OzQ",
+    desc:'블랙 캐슬에서 존 스노우의 첫 훈련',
     segments: [
       { start: "8:06", end: "8:12", en: "it appears you're the least useless person here.", ko: "보니까 여기선 네가 그나마 가장 쓸모 있는 놈이군" },
       { start: "8:13", end: "8:16", en: "There's only so much I can stomach in a day.", ko: "하루에 내가 참을 수 있는 건 한계가 있거든" },
@@ -750,6 +754,71 @@ export const lessons = [
       { start: "9:50", end: "9:53", en: "Will you stop at Winterfell on your way South?", ko: "남쪽으로 가는 길에 윈터펠에 들를 건가?" },
       { start: "9:52", end: "9:58", en: "I expect I will. Gods know there aren't many feather beds between here and King's Landing.", ko: "아마 그럴 거야. 신들도 알지, 여기서 킹스랜딩까지 가는 길엔 폭신한 침대가 별로 없다는 걸." }
     ]
+  },
+   {
+    id: 23,
+    title: "Game of Thrones S1 ep2",
+    category: "bdrama",
+    artist: "",
+    videoId: "kPrW3Swrp4E",
+    desc:'존 스노우와 제이미의 대화',
+    segments: [
+      { start: "0:20", end: "0:22", en: "Sword for the Wall.", ko: "장벽을 위한 검이군." },
+      { start: "0:22", end: "0:27", en: "Already have one. Good man. Have you swung it yet?", ko: "이미 하나 있지. 좋아. 휘둘러 본 적은 있나?" },
+      { start: "0:29", end: "0:31", en: "That’s someone, I mean.", ko: "그게 누군가라니, 내 말은…" },
+      { start: "0:34", end: "0:39", en: "It’s a strange thing, the first time you cut them.", ko: "처음 베어낼 땐 묘한 기분이 들어." },
+      { start: "0:39", end: "0:45", en: "You realize we’re nothing but sacks of meat and blood… and some bone to keep it all standing.", ko: "사람이란 건 고기와 피주머니에 불과하고… 그걸 세워주는 뼈가 조금 있을 뿐이라는 걸 알게 되지." },
+
+      { start: "0:46", end: "0:55", en: "Let me thank you ahead of time. You’re guarding us all from the perils beyond the Wall — wildlings, and White Walkers, and whatnot.", ko: "미리 감사 인사를 하지. 너희는 장벽 너머의 위험, 야만인들과 화이트워커 같은 것들로부터 우리 모두를 지켜주고 있으니." },
+      { start: "0:56", end: "1:03", en: "Grateful, about good strong young men like you… protecting us.", ko: "네 같은 건장한 젊은이들이 우리를 지켜줘서 고맙지." },
+
+      { start: "1:03", end: "1:06", en: "We’ve guarded the kingdoms for 8,000 years, is it we?", ko: "우린 왕국들을 8,000년 동안 지켜왔어, 그렇지?" },
+      { start: "1:08", end: "1:16", en: "Already? Have you taken your vows then?, Soon enough.", ko: "벌써 맹세는 했나?, 곧 하게 될 거야." },
+      { start: "1:16", end: "1:41", en: "Give my regards to the Night’s Watch. I’m sure it will be thrilling to serve in such an elite force, And if not — it’s only for life.", ko: "나이트 워치에 안부 전해라. 그런 정예 집단에서 봉사한다니 정말 짜릿하겠구나. 아니면 뭐, 평생 하는 거니까." },
+    ]
+
+  },
+  {
+    id: 24,
+    title: "Game of Thrones S1 ep2",
+    category: "bdrama",
+    artist: "",
+    videoId: "Zs9Dr7fo46s",
+    desc:"Cersei responds to Robb's peace terms",
+    segments: [
+       { start: "0:00", end: "0:08", en: "From this time until the end of time, we are not part of your realm, but a free and independent Kingdom of the North.", ko: "지금 이 순간부터 영원히, 우리는 당신의 왕국에 속하지 않는다. 우리는 자유롭고 독립된 북부의 왕국이다." },
+      { start: "0:10", end: "0:14", en: "He has more spirit than his father, I'll give him that", ko: "아버지보다 기개가 있군, 그건 인정하지." },
+      { start: "0:14", end: "0:18", en: "You've perfected the art of tearing up papers.", ko: "종이 찢는 재주는 완벽히 익혔구나." },
+      { start: "0:17", end: "0:22", en: "We can give him his father's bones back, at least as a gesture of good faith.", ko: "최소한 성의 표시로 아버지의 유골은 돌려줄 수 있겠지." },
+      { start: "0:21", end: "0:25", en: "You'll give the Starks our reply, cousin.", ko: "스타크 가문에 우리의 답을 전하거라, 사촌." },
+
+      { start: "0:26", end: "0:30", en: "Did you see my brother when you were the Stark's guest?", ko: "스타크의 포로로 있을 때 내 동생을 보았느냐?" },
+      { start: "0:30", end: "0:34", en: "They have not broken his spirit", ko: "봤습니다. 그의 의지는 꺾이지 않았습니다, 전하." },
+      { start: "0:34", end: "0:40", en: "If you speak with him, tell him he has not been forgotten.", ko: "그를 만나면, 잊히지 않았다고 전해주시오." },
+
+      { start: "0:48", end: "0:50", en: "You have a deft hand with diplomacy.", ko: "외교 수완이 뛰어나구나." },
+      { start: "0:50", end: "0:52", en: "If that's everything—", ko: "그게 다라면…" },
+      { start: "0:52", end: "0:57", en: "Well, a raven flew in this morning from Castle Black.", ko: "음, 오늘 아침 캐슬 블랙에서 까마귀가 왔습니다." },
+      { start: "0:56", end: "0:59", en: "Trouble with the wildlings.", ko: "야만인들이 문제랍니다." },
+      { start: "0:59", end: "1:09", en: "That's why they're called wildlings. Somewhat less wild these days—seems they've stopped killing each other and started following this King-Beyond-the-Wall.", ko: "그래서 놈들을 야만인이라 부르지요. 하지만 요즘은 덜 야만적이라네요. 서로 죽이는 걸 멈추고 장벽 너머의 왕이라는 자를 따르고 있답니다." },
+
+      { start: "1:09", end: "1:13", en: "Another king? How many is that now? Five? I've lost count.", ko: "또 다른 왕이라고? 이제 몇이냐? 다섯? 셀 수도 없군." },
+      { start: "1:13", end: "1:18", en: "Lord Commander asks that we send more men to man the Wall.", ko: "총사령관께서 병력을 더 보내 달라고 하셨습니다." },
+      { start: "1:17", end: "1:21", en: "Perhaps he's forgotten we're fighting a war. We have no men to spare.", ko: "지금 우리가 전쟁 중이라는 걸 잊은 모양이지. 남는 병사가 없어." },
+
+      { start: "1:20", end: "1:26", en: "The cold winds are rising, and the dead rise with them.", ko: "차가운 바람이 불어오고, 죽은 자들도 함께 일어납니다." },
+      { start: "1:26", end: "1:33", en: "The Northerners are superstitious people. According to the Commander, one of these dead men attacked him in his chambers.", ko: "북부 사람들은 미신을 믿지요. 하지만 사령관의 말로는, 죽은 자 하나가 그의 방에서 그를 습격했다고 합니다." },
+
+      { start: "1:35", end: "1:38", en: "How do you kill a dead man?", ko: "죽은 자를 어떻게 죽이지?" },
+      { start: "1:38", end: "1:41", en: "Apparently, you burn him.", ko: "불태워야 한답니다." },
+      { start: "1:41", end: "1:48", en: "One trip to the Wall and you come back believing in grumpkins and snarks.", ko: "장벽에 한번 다녀오더니 괴물과 요정 이야기를 믿게 되었구나." },
+      { start: "1:48", end: "1:50", en: "I don't know what I believe.", ko: "내가 뭘 믿는지도 모르겠네." },
+
+      { start: "1:50", end: "1:58", en: "But here's a fact for you: Night's Watch is the only thing that separates us from what lies beyond the Wall.", ko: "하지만 분명한 사실 하나. 나이트 워치만이 장벽 너머의 것들과 우리 사이를 가로막고 있다." },
+      { start: "1:57", end: "2:01", en: "I have every confidence that the brave men of the Night's Watch will protect us all.", ko: "나는 용감한 나이트 워치 형제들이 우리 모두를 지켜줄 거라 확신한다." }
+    ]
+
+
   },
   
 

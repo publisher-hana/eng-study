@@ -8,10 +8,21 @@
   grid-template-columns: repeat(3, 1fr);
   gap:20px;
   row-gap:80px;
+  li{
+    margin-bottom: 3rem;
+  }
   li a{
     font-size: 18px;
     &:hover{
-      text-decoration: underline;
+      .title{
+        text-decoration: underline;
+      }
+    }
+    .title{
+      font-size: 1.8rem;
+    }
+    .desc{
+      font-size: 1.4rem;
     }
   }
 }

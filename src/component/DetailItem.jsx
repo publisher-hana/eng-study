@@ -11,7 +11,8 @@ export default function DetailItem({ value, link }) {
           alt={`${value.title} thumbnail`} 
           className="img-thum"
         />
-        {value.title} {value.artist && `- ${value.artist}`}
+        <h2 className="title">{value.title}</h2> <span>{value.artist && `- ${value.artist}`}</span>
+        <div className="desc">{value.desc}</div>
       </Link>
     </li>
   );
